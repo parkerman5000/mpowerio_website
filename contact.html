@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact mpowerio.ai - Get in touch for AI consulting, tech strategy, custom development, or training inquiries.">
+  <title>Contact | mpowerio.ai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="mpowerio.ai">
+        <span>mpowerio<span style="color: var(--tech-blue)">.ai</span></span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="services.html" class="nav__link">Services</a>
+        <a href="contact.html" class="nav__link nav__link--active">Contact</a>
+        <a href="services.html#pricing" class="btn btn--primary nav__cta">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contact Hero -->
+  <section class="about-hero">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">Get in Touch</span>
+        <h1 class="section-header__title">Let's Start a Conversation</h1>
+        <p class="section-header__text">
+          Have a question or ready to explore how AI can transform your business?
+          We'd love to hear from you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <h2 style="margin-bottom: var(--space-lg);">Send Us a Message</h2>
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label class="form-label" for="name">Your Name *</label>
+              <input type="text" id="name" name="name" class="form-input" required placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address *</label>
+              <input type="email" id="email" name="email" class="form-input" required placeholder="john@example.com">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="company">Company Name</label>
+              <input type="text" id="company" name="company" class="form-input" placeholder="Acme Inc.">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="service">What are you interested in?</label>
+              <select id="service" name="service" class="form-select">
+                <option value="">Select a service...</option>
+                <option value="consulting">AI/ML Consulting</option>
+                <option value="strategy">Tech Strategy & Advisory</option>
+                <option value="development">Custom Software Development</option>
+                <option value="training">Training & Education</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="budget">Budget Range</label>
+              <select id="budget" name="budget" class="form-select">
+                <option value="">Select budget range...</option>
+                <option value="under-1k">Under $1,000</option>
+                <option value="1k-5k">$1,000 - $5,000</option>
+                <option value="5k-10k">$5,000 - $10,000</option>
+                <option value="10k-25k">$10,000 - $25,000</option>
+                <option value="25k+">$25,000+</option>
+                <option value="not-sure">Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Tell us about your project *</label>
+              <textarea id="message" name="message" class="form-textarea" required placeholder="Describe your project, challenges, or questions..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--large" style="width: 100%;">
+              Send Message
+            </button>
+
+            <p style="margin-top: var(--space-md); font-size: var(--text-sm); color: var(--muted-text); text-align: center;">
+              We typically respond within 24 hours.
+            </p>
+          </form>
+        </div>
+
+        <div>
+          <h2 style="margin-bottom: var(--space-lg);">Other Ways to Reach Us</h2>
+
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-item__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tech-blue)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <h4 class="contact-item__title">Email</h4>
+                <p class="contact-item__text">
+                  <a href="mailto:hello@mpowerio.ai" style="color: var(--tech-blue);">hello@mpowerio.ai</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tech-blue)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h4 class="contact-item__title">Response Time</h4>
+                <p class="contact-item__text">
+                  We typically respond within 24 hours during business days.
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tech-blue)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h4 class="contact-item__title">Location</h4>
+                <p class="contact-item__text">
+                  Remote-first company serving clients worldwide.
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tech-blue)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <div>
+                <h4 class="contact-item__title">Book a Call</h4>
+                <p class="contact-item__text">
+                  Prefer to talk? <a href="#" style="color: var(--tech-blue);">Schedule a free 30-minute consultation</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Preview -->
+          <div style="margin-top: var(--space-3xl); padding: var(--space-xl); background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(34, 197, 94, 0.05) 100%); border-radius: var(--radius-xl);">
+            <h3 style="margin-bottom: var(--space-lg);">Common Questions</h3>
+
+            <div style="margin-bottom: var(--space-lg);">
+              <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Do you offer free consultations?</h4>
+              <p style="color: var(--muted-text); margin-bottom: 0; font-size: var(--text-sm);">
+                Yes! We offer a free 30-minute discovery call to understand your needs and see if we're a good fit.
+              </p>
+            </div>
+
+            <div style="margin-bottom: var(--space-lg);">
+              <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">What's your typical project timeline?</h4>
+              <p style="color: var(--muted-text); margin-bottom: 0; font-size: var(--text-sm);">
+                It depends on scope, but most consulting engagements see results within weeks, not months.
+              </p>
+            </div>
+
+            <div>
+              <h4 style="font-size: var(--text-base); margin-bottom: var(--space-xs);">Do you work with startups?</h4>
+              <p style="color: var(--muted-text); margin-bottom: 0; font-size: var(--text-sm);">
+                Absolutely! We specialize in helping startups and small businesses access enterprise-grade AI.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="index.html" class="logo">
+            <span style="color: var(--light-text);">mpowerio<span style="color: var(--tech-blue-light)">.ai</span></span>
+          </a>
+          <p>Quality Inputs producing Quantum Outputs. Enterprise-grade AI solutions for startups and small businesses.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__title">Services</h4>
+          <ul class="footer__links">
+            <li><a href="services.html#consulting">AI Consulting</a></li>
+            <li><a href="services.html#strategy">Tech Strategy</a></li>
+            <li><a href="services.html#development">Development</a></li>
+            <li><a href="services.html#training">Training</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__title">Company</h4>
+          <ul class="footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="services.html#pricing">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__title">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="mailto:hello@mpowerio.ai">hello@mpowerio.ai</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2024 mpowerio.ai LLC. All rights reserved.</p>
+        <p>Quality Inputs producing Quantum Outputs</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
