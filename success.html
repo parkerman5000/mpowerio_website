@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Payment Successful - mpowerio.ai">
+  <title>Payment Successful | mpowerio.ai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="mpowerio.ai">
+        <span>mpowerio<span style="color: var(--tech-blue)">.ai</span></span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Success Page -->
+  <section class="success-page">
+    <div class="success-content">
+      <div class="success-icon">
+        &#10003;
+      </div>
+      <h1 class="success-title">Payment Successful!</h1>
+      <p class="success-text">
+        Thank you for your purchase! We're excited to work with you.
+        You'll receive a confirmation email shortly with next steps.
+      </p>
+
+      <div style="background: var(--light-surface); border: 1px solid var(--light-border); border-radius: var(--radius-xl); padding: var(--space-xl); margin-bottom: var(--space-2xl); text-align: left;">
+        <h3 style="margin-bottom: var(--space-lg); font-size: var(--text-lg);">What Happens Next?</h3>
+        <ol style="color: var(--muted-text); padding-left: var(--space-lg);">
+          <li style="margin-bottom: var(--space-md);">
+            <strong style="color: var(--dark-text);">Check your email</strong><br>
+            You'll receive a receipt and welcome email within the next few minutes.
+          </li>
+          <li style="margin-bottom: var(--space-md);">
+            <strong style="color: var(--dark-text);">Schedule your kickoff call</strong><br>
+            We'll send you a calendar link to book your first strategy session.
+          </li>
+          <li style="margin-bottom: var(--space-md);">
+            <strong style="color: var(--dark-text);">Get onboarded</strong><br>
+            Receive access to our client portal and communication channels.
+          </li>
+          <li>
+            <strong style="color: var(--dark-text);">Start transforming</strong><br>
+            Let's build something amazing together!
+          </li>
+        </ol>
+      </div>
+
+      <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+        <a href="index.html" class="btn btn--primary">Back to Home</a>
+        <a href="contact.html" class="btn btn--secondary">Contact Support</a>
+      </div>
+
+      <p style="margin-top: var(--space-2xl); font-size: var(--text-sm); color: var(--muted-text);">
+        Questions? Reach out to <a href="mailto:hello@mpowerio.ai" style="color: var(--tech-blue);">hello@mpowerio.ai</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Confetti Animation (optional fun touch) -->
+  <style>
+    @keyframes confetti-fall {
+      0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+    .confetti {
+      position: fixed;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      animation: confetti-fall 4s linear forwards;
+      pointer-events: none;
+    }
+  </style>
+  <script>
+    // Simple confetti effect
+    function createConfetti() {
+      const colors = ['#2563eb', '#22c55e', '#0ea5e9', '#f59e0b'];
+      for (let i = 0; i < 50; i++) {
+        setTimeout(() => {
+          const confetti = document.createElement('div');
+          confetti.className = 'confetti';
+          confetti.style.left = Math.random() * 100 + 'vw';
+          confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+          confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+          confetti.style.animationDuration = (3 + Math.random() * 2) + 's';
+          document.body.appendChild(confetti);
+          setTimeout(() => confetti.remove(), 5000);
+        }, i * 50);
+      }
+    }
+    createConfetti();
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
