@@ -16,11 +16,11 @@
 
   /* Vibrant Accents */
   --accent-cyan: #00b4d8;
-  --accent-cyan-glow: rgba(0, 180, 216, 0.4);
+  --accent-cyan-glow: rgba(0, 180, 216, 0.6);
   --accent-mint: #00f5a0;
-  --accent-mint-glow: rgba(0, 245, 160, 0.4);
+  --accent-mint-glow: rgba(0, 245, 160, 0.6);
   --accent-purple: #7b2cbf;
-  --accent-purple-glow: rgba(123, 44, 191, 0.4);
+  --accent-purple-glow: rgba(123, 44, 191, 0.5);
 
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, #00b4d8 0%, #00f5a0 100%);
@@ -431,16 +431,16 @@ p {
   overflow: hidden;
 }
 
-/* Gradient orbs */
+/* Gradient orbs - bright and bold */
 .hero::before {
   content: '';
   position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, var(--accent-cyan-glow) 0%, transparent 70%);
-  filter: blur(80px);
+  top: -15%;
+  right: -5%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, var(--accent-cyan-glow) 0%, rgba(0, 180, 216, 0.2) 40%, transparent 70%);
+  filter: blur(60px);
   pointer-events: none;
   animation: float 8s ease-in-out infinite;
 }
@@ -448,12 +448,12 @@ p {
 .hero::after {
   content: '';
   position: absolute;
-  bottom: -20%;
-  left: -10%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, var(--accent-mint-glow) 0%, transparent 70%);
-  filter: blur(80px);
+  bottom: -15%;
+  left: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--accent-mint-glow) 0%, rgba(0, 245, 160, 0.2) 40%, transparent 70%);
+  filter: blur(60px);
   pointer-events: none;
   animation: float 8s ease-in-out infinite reverse;
 }
