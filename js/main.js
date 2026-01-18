@@ -36,6 +36,34 @@
   }
 
   // ==========================================================================
+  // Scroll Reveal Animation
+  // ==========================================================================
+  const revealElements = document.querySelectorAll('.reveal');
+
+  if (revealElements.length > 0 && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => {
+      revealObserver.observe(el);
+    });
+  } else {
+    // Fallback for browsers without IntersectionObserver
+    revealElements.forEach(el => {
+      el.classList.add('revealed');
+    });
+  }
+
+  // ==========================================================================
   // Header Scroll Effect
   // ==========================================================================
   const header = document.querySelector('.header');
@@ -47,9 +75,11 @@
       const currentScroll = window.pageYOffset;
 
       if (currentScroll > 100) {
-        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        header.style.background = 'rgba(10, 10, 15, 0.95)';
+        header.style.borderBottomColor = 'rgba(0, 180, 216, 0.2)';
       } else {
-        header.style.boxShadow = 'none';
+        header.style.background = 'rgba(10, 10, 15, 0.8)';
+        header.style.borderBottomColor = 'rgba(255, 255, 255, 0.08)';
       }
 
       lastScroll = currentScroll;
@@ -104,15 +134,14 @@
 
       // Simulate form submission (replace with actual endpoint)
       setTimeout(() => {
-        // In production, you would send this to your server or a service like Formspree
         console.log('Form submitted:', data);
 
         // Show success message
         contactForm.innerHTML = `
           <div style="text-align: center; padding: var(--space-2xl);">
-            <div style="width: 60px; height: 60px; background: var(--nature-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-lg); color: white; font-size: 24px;">✓</div>
-            <h3 style="margin-bottom: var(--space-md);">Message Sent!</h3>
-            <p style="color: var(--muted-text);">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+            <div style="width: 80px; height: 80px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-lg); color: var(--bg-primary); font-size: 32px;">✓</div>
+            <h3 style="margin-bottom: var(--space-md); color: var(--text-primary);">Message Sent!</h3>
+            <p style="color: var(--text-muted);">Thank you for reaching out. We'll get back to you within 24 hours.</p>
           </div>
         `;
       }, 1500);
@@ -120,115 +149,63 @@
   }
 
   // ==========================================================================
-  // Checkout Page Functionality
+  // Checkout Page - Plan Selection
   // ==========================================================================
   const checkoutForm = document.getElementById('checkout-form');
-  const planRadios = document.querySelectorAll('input[name="plan"]');
 
-  // Plan details
-  const plans = {
-    retainer: {
-      name: 'Monthly Retainer',
-      price: '$2,000',
-      priceAmount: 2000,
-      period: '/mo',
-      priceId: 'price_retainer', // Replace with actual Stripe Price ID
-      mode: 'subscription',
-      features: [
-        '20 hours of consulting',
-        'Priority response time',
-        'Monthly strategy calls',
-        'Email & Slack support'
-      ]
-    },
-    starter: {
-      name: 'Starter Package',
-      price: '$750',
-      priceAmount: 750,
-      period: '',
-      priceId: 'price_starter', // Replace with actual Stripe Price ID
-      mode: 'payment',
-      features: [
-        '10 hours of consulting',
-        'Valid for 30 days',
-        'Email support',
-        'Kickoff strategy call'
-      ]
-    },
-    workshop: {
-      name: 'AI Workshop',
-      price: '$500',
-      priceAmount: 500,
-      period: '',
-      priceId: 'price_workshop', // Replace with actual Stripe Price ID
-      mode: 'payment',
-      features: [
-        'Half-day workshop',
-        'Up to 10 participants',
-        'Custom curriculum',
-        'Materials included'
-      ]
-    }
-  };
-
-  // Update order summary when plan changes
-  if (planRadios.length > 0) {
-    function updateOrderSummary() {
-      const selectedPlan = document.querySelector('input[name="plan"]:checked')?.value || 'retainer';
-      const plan = plans[selectedPlan];
-
-      // Update plan cards styling
-      document.querySelectorAll('[id^="plan-"][id$="-card"]').forEach(card => {
-        card.style.borderColor = 'var(--light-border)';
-      });
-      const selectedCard = document.getElementById(`plan-${selectedPlan}-card`);
-      if (selectedCard) {
-        selectedCard.style.borderColor = 'var(--tech-blue)';
-      }
-
-      // Update order summary
-      const planName = document.getElementById('order-plan-name');
-      const planPrice = document.getElementById('order-plan-price');
-      const orderTotal = document.getElementById('order-total');
-      const orderPeriod = document.getElementById('order-period');
-      const orderFeatures = document.getElementById('order-features');
-
-      if (planName) planName.textContent = plan.name;
-      if (planPrice) planPrice.textContent = plan.price;
-      if (orderTotal) orderTotal.innerHTML = plan.price + `<span style="font-size: var(--text-sm); font-weight: 400; color: var(--muted-text);" id="order-period">${plan.period}</span>`;
-      if (orderFeatures) {
-        orderFeatures.innerHTML = plan.features.map(f => `<li style="margin-bottom: var(--space-xs);">&#10003; ${f}</li>`).join('');
-      }
-    }
-
-    planRadios.forEach(radio => {
-      radio.addEventListener('change', updateOrderSummary);
-    });
-
-    // Initialize
-    updateOrderSummary();
-
-    // Check URL params for pre-selected plan
-    const urlParams = new URLSearchParams(window.location.search);
-    const preselectedPlan = urlParams.get('plan');
-    if (preselectedPlan && plans[preselectedPlan]) {
-      const planInput = document.getElementById(`plan-${preselectedPlan}`);
-      if (planInput) {
-        planInput.checked = true;
-        updateOrderSummary();
-      }
-    }
-  }
-
-  // Handle checkout form submission
   if (checkoutForm) {
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const product = urlParams.get('product');
+    const tier = urlParams.get('tier');
+
+    // Product pricing data
+    const products = {
+      'phone-agents': {
+        name: 'AI Phone Agents',
+        tiers: {
+          starter: { price: '$299', period: '/mo', priceId: 'price_phone_starter' },
+          growth: { price: '$599', period: '/mo', priceId: 'price_phone_growth' }
+        }
+      },
+      'voice-clones': {
+        name: 'Voice Clones',
+        tiers: {
+          basic: { price: '$199', period: '', priceId: 'price_voice_basic' },
+          pro: { price: '$499', period: '', priceId: 'price_voice_pro' }
+        }
+      },
+      'avatars': {
+        name: 'VirtualU Avatars',
+        tiers: {
+          starter: { price: '$399', period: '/mo', priceId: 'price_avatar_starter' },
+          business: { price: '$799', period: '/mo', priceId: 'price_avatar_business' }
+        }
+      }
+    };
+
+    // Update order summary if product/tier provided
+    if (product && tier && products[product] && products[product].tiers[tier]) {
+      const selectedProduct = products[product];
+      const selectedTier = selectedProduct.tiers[tier];
+
+      const productNameEl = document.getElementById('order-product-name');
+      const tierNameEl = document.getElementById('order-tier-name');
+      const priceEl = document.getElementById('order-price');
+      const totalEl = document.getElementById('order-total');
+
+      if (productNameEl) productNameEl.textContent = selectedProduct.name;
+      if (tierNameEl) tierNameEl.textContent = tier.charAt(0).toUpperCase() + tier.slice(1);
+      if (priceEl) priceEl.textContent = selectedTier.price + selectedTier.period;
+      if (totalEl) totalEl.textContent = selectedTier.price + selectedTier.period;
+    }
+
+    // Handle form submission
     checkoutForm.addEventListener('submit', async function(e) {
       e.preventDefault();
 
       const formData = new FormData(checkoutForm);
       const data = Object.fromEntries(formData);
-      const selectedPlan = document.querySelector('input[name="plan"]:checked')?.value || 'retainer';
-      const plan = plans[selectedPlan];
 
       // Basic validation
       if (!data.name || !data.email) {
@@ -243,6 +220,18 @@
       submitBtn.disabled = true;
 
       try {
+        // Get the price ID based on URL params
+        let priceId = 'price_default';
+        let mode = 'payment';
+
+        if (product && tier && products[product] && products[product].tiers[tier]) {
+          priceId = products[product].tiers[tier].priceId;
+          // Subscriptions for phone-agents and avatars
+          if (product === 'phone-agents' || product === 'avatars') {
+            mode = 'subscription';
+          }
+        }
+
         // Create Stripe Checkout Session via backend
         const response = await fetch('php/checkout.php', {
           method: 'POST',
@@ -250,13 +239,13 @@
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            priceId: plan.priceId,
-            mode: plan.mode,
+            priceId: priceId,
+            mode: mode,
             customerEmail: data.email,
             customerName: data.name,
             company: data.company || '',
             successUrl: window.location.origin + '/success.html',
-            cancelUrl: window.location.origin + '/checkout.html?plan=' + selectedPlan
+            cancelUrl: window.location.href
           })
         });
 
@@ -269,10 +258,6 @@
         // Redirect to Stripe Checkout
         if (session.url) {
           window.location.href = session.url;
-        } else if (session.sessionId) {
-          // If using Stripe.js redirect
-          const stripe = Stripe('pk_test_YOUR_PUBLISHABLE_KEY'); // Replace with your key
-          await stripe.redirectToCheckout({ sessionId: session.sessionId });
         }
 
       } catch (error) {
@@ -285,33 +270,6 @@
   }
 
   // ==========================================================================
-  // Animation on Scroll (Simple Intersection Observer)
-  // ==========================================================================
-  const animateElements = document.querySelectorAll('.card, .pricing-card, .about-content > div');
-
-  if (animateElements.length > 0 && 'IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-
-    animateElements.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
-  }
-
-  // ==========================================================================
   // Year in Footer (Auto-update)
   // ==========================================================================
   document.querySelectorAll('.footer__bottom p').forEach(p => {
@@ -319,5 +277,18 @@
       p.textContent = p.textContent.replace('2024', new Date().getFullYear());
     }
   });
+
+  // ==========================================================================
+  // 11Labs Widget Placeholder Click Handler
+  // ==========================================================================
+  const widgetPlaceholder = document.querySelector('.hero__widget-placeholder');
+
+  if (widgetPlaceholder) {
+    widgetPlaceholder.style.cursor = 'pointer';
+    widgetPlaceholder.addEventListener('click', function() {
+      // If 11Labs widget is not yet integrated, show a message
+      alert('AI voice demo coming soon! Contact us to schedule a live demo.');
+    });
+  }
 
 })();
