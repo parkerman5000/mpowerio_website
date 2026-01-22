@@ -21,6 +21,10 @@
   --accent-mint-glow: rgba(0, 245, 160, 0.6);
   --accent-purple: #7b2cbf;
   --accent-purple-glow: rgba(123, 44, 191, 0.5);
+  --accent-orange: #ff6b35;
+  --accent-orange-glow: rgba(255, 107, 53, 0.6);
+  --accent-gold: #ffd700;
+  --accent-gold-glow: rgba(255, 215, 0, 0.5);
 
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, #00b4d8 0%, #00f5a0 100%);
@@ -262,6 +266,173 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Animated Logo with Neural Network */
+.logo-animated {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.logo-animated svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Neural network nodes - pulse and shift animations */
+.logo-animated .node {
+  transform-origin: center;
+}
+
+.logo-animated .node-1 {
+  animation: node-pulse 3s ease-in-out infinite, node-shift-1 8s ease-in-out infinite;
+}
+
+.logo-animated .node-2 {
+  animation: node-pulse 3s ease-in-out infinite 0.3s, node-shift-2 7s ease-in-out infinite;
+}
+
+.logo-animated .node-3 {
+  animation: node-pulse 3s ease-in-out infinite 0.6s, node-shift-3 9s ease-in-out infinite;
+}
+
+.logo-animated .node-4 {
+  animation: node-pulse-center 4s ease-in-out infinite, node-color-shift 6s ease-in-out infinite;
+}
+
+.logo-animated .node-5 {
+  animation: node-pulse 3s ease-in-out infinite 0.9s, node-shift-4 8s ease-in-out infinite reverse;
+}
+
+.logo-animated .node-6 {
+  animation: node-pulse 3s ease-in-out infinite 1.2s, node-shift-5 7s ease-in-out infinite reverse;
+}
+
+.logo-animated .node-7 {
+  animation: node-pulse 3s ease-in-out infinite 1.5s, node-shift-6 9s ease-in-out infinite;
+}
+
+.logo-animated .node-8 {
+  animation: node-pulse 3s ease-in-out infinite 1.8s, node-shift-7 8s ease-in-out infinite reverse;
+}
+
+/* Glow ring animation */
+.logo-animated .glow-ring {
+  animation: ring-glow 3s ease-in-out infinite;
+}
+
+/* Node pulse - size breathing */
+@keyframes node-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Center node pulse - larger breathing */
+@keyframes node-pulse-center {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.85;
+  }
+}
+
+/* Node shifts - subtle position movements */
+@keyframes node-shift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(1px, 1px) scale(1.1); }
+  50% { transform: translate(-1px, 0.5px) scale(0.95); }
+  75% { transform: translate(0.5px, -1px) scale(1.05); }
+}
+
+@keyframes node-shift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-1px, 1px) scale(1.15); }
+  66% { transform: translate(1px, -0.5px) scale(0.9); }
+}
+
+@keyframes node-shift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(0.5px, -1px) scale(1.1); }
+  50% { transform: translate(-0.5px, 1px) scale(1); }
+  75% { transform: translate(1px, 0.5px) scale(1.2); }
+}
+
+@keyframes node-shift-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-1px, -1px) scale(1.1); }
+}
+
+@keyframes node-shift-5 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(1px, -1px) scale(1.15); }
+  66% { transform: translate(-0.5px, 0.5px) scale(0.95); }
+}
+
+@keyframes node-shift-6 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-0.5px, -1px) scale(1.05); }
+  75% { transform: translate(0.5px, 1px) scale(1.1); }
+}
+
+@keyframes node-shift-7 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(1px, -0.5px) scale(1.15); }
+}
+
+/* Center node color shift */
+@keyframes node-color-shift {
+  0%, 100% { fill: #00f5a0; }
+  25% { fill: #00b4d8; }
+  50% { fill: #ff6b35; }
+  75% { fill: #7b2cbf; }
+}
+
+/* Ring glow pulse */
+@keyframes ring-glow {
+  0%, 100% {
+    opacity: 0.8;
+    stroke-width: 2.5;
+  }
+  50% {
+    opacity: 1;
+    stroke-width: 3;
+  }
+}
+
+/* Legacy animations kept for compatibility */
+@keyframes color-shift {
+  0%, 100% { fill: var(--accent-cyan); }
+  25% { fill: var(--accent-mint); }
+  50% { fill: var(--accent-orange); }
+  75% { fill: var(--accent-purple); }
+}
+
+/* Glow pulse on logo */
+.logo-animated .glow-ring {
+  animation: logo-glow 3s ease-in-out infinite;
+}
+
+@keyframes logo-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 3px var(--accent-cyan-glow));
+    opacity: 0.6;
+  }
+  50% {
+    filter: drop-shadow(0 0 8px var(--accent-mint-glow));
+    opacity: 0.9;
+  }
 }
 
 .nav {
