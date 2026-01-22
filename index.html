@@ -19,59 +19,67 @@
         <div class="logo-animated">
           <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#00b4d8"/>
-                <stop offset="50%" stop-color="#00f5a0"/>
-                <stop offset="100%" stop-color="#ff6b35"/>
+              <linearGradient id="logoRingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00f5a0"/>
+                <stop offset="50%" stop-color="#00b4d8"/>
+                <stop offset="100%" stop-color="#7b2cbf"/>
               </linearGradient>
-              <linearGradient id="coreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#0a0a0f"/>
-                <stop offset="100%" stop-color="#1a1a2e"/>
-              </linearGradient>
-              <radialGradient id="orbGlowCyan" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#00b4d8" stop-opacity="1"/>
-                <stop offset="100%" stop-color="#00b4d8" stop-opacity="0"/>
+              <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#1a1a2e"/>
+                <stop offset="100%" stop-color="#0a0a0f"/>
               </radialGradient>
-              <radialGradient id="orbGlowMint" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#00f5a0" stop-opacity="1"/>
-                <stop offset="100%" stop-color="#00f5a0" stop-opacity="0"/>
-              </radialGradient>
-              <radialGradient id="orbGlowOrange" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#ff6b35" stop-opacity="1"/>
-                <stop offset="100%" stop-color="#ff6b35" stop-opacity="0"/>
-              </radialGradient>
-              <radialGradient id="orbGlowPurple" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#7b2cbf" stop-opacity="1"/>
-                <stop offset="100%" stop-color="#7b2cbf" stop-opacity="0"/>
-              </radialGradient>
+              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
             </defs>
 
+            <!-- Dark background circle -->
+            <circle cx="25" cy="25" r="23" fill="url(#bgGradient)"/>
+
             <!-- Outer glow ring -->
-            <circle class="glow-ring" cx="25" cy="25" r="22" fill="none" stroke="url(#logoGradient)" stroke-width="1.5" opacity="0.4"/>
+            <circle class="glow-ring" cx="25" cy="25" r="21" fill="none" stroke="url(#logoRingGradient)" stroke-width="2.5" opacity="0.8"/>
 
-            <!-- Main ring -->
-            <circle class="logo-ring" cx="25" cy="25" r="20" stroke-width="2"/>
+            <!-- Inner subtle ring -->
+            <circle cx="25" cy="25" r="18" fill="none" stroke="#00b4d8" stroke-width="0.5" opacity="0.3"/>
 
-            <!-- Inner ring -->
-            <circle cx="25" cy="25" r="14" fill="none" stroke="url(#logoGradient)" stroke-width="1" opacity="0.5"/>
+            <!-- Neural network connections (lines) -->
+            <g class="network-lines" stroke="#00b4d8" stroke-width="0.8" opacity="0.6" filter="url(#glow)">
+              <line x1="25" y1="14" x2="17" y2="20"/>
+              <line x1="25" y1="14" x2="33" y2="18"/>
+              <line x1="17" y1="20" x2="14" y2="28"/>
+              <line x1="17" y1="20" x2="25" y2="25"/>
+              <line x1="33" y1="18" x2="25" y2="25"/>
+              <line x1="33" y1="18" x2="35" y2="27"/>
+              <line x1="25" y1="25" x2="18" y2="33"/>
+              <line x1="25" y1="25" x2="32" y2="34"/>
+              <line x1="14" y1="28" x2="18" y2="33"/>
+              <line x1="35" y1="27" x2="32" y2="34"/>
+              <line x1="18" y1="33" x2="32" y2="34"/>
+            </g>
 
-            <!-- Core background -->
-            <circle class="logo-core" cx="25" cy="25" r="12"/>
-
-            <!-- Orbiting orbs (outer) -->
-            <circle class="orb orb-cyan" cx="25" cy="25" r="3" fill="url(#orbGlowCyan)"/>
-            <circle class="orb orb-mint" cx="25" cy="25" r="2.5" fill="url(#orbGlowMint)"/>
-            <circle class="orb orb-orange" cx="25" cy="25" r="2" fill="url(#orbGlowOrange)"/>
-            <circle class="orb orb-purple" cx="25" cy="25" r="2.5" fill="url(#orbGlowPurple)"/>
-
-            <!-- Inner floating orbs with color shift -->
-            <circle class="inner-orb inner-orb-1 shift-orb" cx="21" cy="22" r="2"/>
-            <circle class="inner-orb inner-orb-2 shift-orb" cx="29" cy="23" r="1.5" style="animation-delay: 2s"/>
-            <circle class="inner-orb inner-orb-3 shift-orb" cx="25" cy="28" r="1.8" style="animation-delay: 4s"/>
-            <circle class="inner-orb inner-orb-4 shift-orb" cx="23" cy="26" r="1.2" style="animation-delay: 6s"/>
-
-            <!-- Center bright dot -->
-            <circle cx="25" cy="25" r="1" fill="#ffffff" opacity="0.9"/>
+            <!-- Neural network nodes (orbs) with animations -->
+            <g filter="url(#glow)">
+              <!-- Top node - mint -->
+              <circle class="node node-1" cx="25" cy="14" r="3" fill="#00f5a0"/>
+              <!-- Left upper node - cyan -->
+              <circle class="node node-2" cx="17" cy="20" r="2.5" fill="#00b4d8"/>
+              <!-- Right upper node - mint -->
+              <circle class="node node-3" cx="33" cy="18" r="2.5" fill="#00f5a0"/>
+              <!-- Center node - bright mint (largest) -->
+              <circle class="node node-4" cx="25" cy="25" r="3.5" fill="#00f5a0"/>
+              <!-- Left side node - cyan -->
+              <circle class="node node-5" cx="14" cy="28" r="2" fill="#00b4d8"/>
+              <!-- Right side node - cyan -->
+              <circle class="node node-6" cx="35" cy="27" r="2" fill="#00b4d8"/>
+              <!-- Bottom left node - mint -->
+              <circle class="node node-7" cx="18" cy="33" r="2.5" fill="#00f5a0"/>
+              <!-- Bottom right node - cyan -->
+              <circle class="node node-8" cx="32" cy="34" r="2" fill="#00b4d8"/>
+            </g>
           </svg>
         </div>
         <span>mpowerio.ai</span>
@@ -320,45 +328,41 @@
             <div class="logo-animated">
               <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#00b4d8"/>
-                    <stop offset="50%" stop-color="#00f5a0"/>
-                    <stop offset="100%" stop-color="#ff6b35"/>
+                  <linearGradient id="footerRingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#00f5a0"/>
+                    <stop offset="50%" stop-color="#00b4d8"/>
+                    <stop offset="100%" stop-color="#7b2cbf"/>
                   </linearGradient>
-                  <linearGradient id="footerCoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#0a0a0f"/>
-                    <stop offset="100%" stop-color="#1a1a2e"/>
-                  </linearGradient>
-                  <radialGradient id="footerOrbCyan" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#00b4d8" stop-opacity="1"/>
-                    <stop offset="100%" stop-color="#00b4d8" stop-opacity="0"/>
+                  <radialGradient id="footerBgGradient" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#1a1a2e"/>
+                    <stop offset="100%" stop-color="#0a0a0f"/>
                   </radialGradient>
-                  <radialGradient id="footerOrbMint" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#00f5a0" stop-opacity="1"/>
-                    <stop offset="100%" stop-color="#00f5a0" stop-opacity="0"/>
-                  </radialGradient>
-                  <radialGradient id="footerOrbOrange" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#ff6b35" stop-opacity="1"/>
-                    <stop offset="100%" stop-color="#ff6b35" stop-opacity="0"/>
-                  </radialGradient>
-                  <radialGradient id="footerOrbPurple" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#7b2cbf" stop-opacity="1"/>
-                    <stop offset="100%" stop-color="#7b2cbf" stop-opacity="0"/>
-                  </radialGradient>
+                  <filter id="footerGlow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
                 </defs>
-                <circle class="glow-ring" cx="25" cy="25" r="22" fill="none" stroke="url(#footerLogoGradient)" stroke-width="1.5" opacity="0.4"/>
-                <circle class="logo-ring" cx="25" cy="25" r="20" fill="none" stroke="url(#footerLogoGradient)" stroke-width="2" opacity="0.6"/>
-                <circle cx="25" cy="25" r="14" fill="none" stroke="url(#footerLogoGradient)" stroke-width="1" opacity="0.5"/>
-                <circle cx="25" cy="25" r="12" fill="url(#footerCoreGradient)"/>
-                <circle class="orb orb-cyan" cx="25" cy="25" r="3" fill="url(#footerOrbCyan)"/>
-                <circle class="orb orb-mint" cx="25" cy="25" r="2.5" fill="url(#footerOrbMint)"/>
-                <circle class="orb orb-orange" cx="25" cy="25" r="2" fill="url(#footerOrbOrange)"/>
-                <circle class="orb orb-purple" cx="25" cy="25" r="2.5" fill="url(#footerOrbPurple)"/>
-                <circle class="inner-orb inner-orb-1 shift-orb" cx="21" cy="22" r="2"/>
-                <circle class="inner-orb inner-orb-2 shift-orb" cx="29" cy="23" r="1.5" style="animation-delay: 2s"/>
-                <circle class="inner-orb inner-orb-3 shift-orb" cx="25" cy="28" r="1.8" style="animation-delay: 4s"/>
-                <circle class="inner-orb inner-orb-4 shift-orb" cx="23" cy="26" r="1.2" style="animation-delay: 6s"/>
-                <circle cx="25" cy="25" r="1" fill="#ffffff" opacity="0.9"/>
+                <circle cx="25" cy="25" r="23" fill="url(#footerBgGradient)"/>
+                <circle class="glow-ring" cx="25" cy="25" r="21" fill="none" stroke="url(#footerRingGradient)" stroke-width="2.5" opacity="0.8"/>
+                <circle cx="25" cy="25" r="18" fill="none" stroke="#00b4d8" stroke-width="0.5" opacity="0.3"/>
+                <g stroke="#00b4d8" stroke-width="0.8" opacity="0.6" filter="url(#footerGlow)">
+                  <line x1="25" y1="14" x2="17" y2="20"/><line x1="25" y1="14" x2="33" y2="18"/>
+                  <line x1="17" y1="20" x2="14" y2="28"/><line x1="17" y1="20" x2="25" y2="25"/>
+                  <line x1="33" y1="18" x2="25" y2="25"/><line x1="33" y1="18" x2="35" y2="27"/>
+                  <line x1="25" y1="25" x2="18" y2="33"/><line x1="25" y1="25" x2="32" y2="34"/>
+                  <line x1="14" y1="28" x2="18" y2="33"/><line x1="35" y1="27" x2="32" y2="34"/>
+                  <line x1="18" y1="33" x2="32" y2="34"/>
+                </g>
+                <g filter="url(#footerGlow)">
+                  <circle class="node node-1" cx="25" cy="14" r="3" fill="#00f5a0"/>
+                  <circle class="node node-2" cx="17" cy="20" r="2.5" fill="#00b4d8"/>
+                  <circle class="node node-3" cx="33" cy="18" r="2.5" fill="#00f5a0"/>
+                  <circle class="node node-4" cx="25" cy="25" r="3.5" fill="#00f5a0"/>
+                  <circle class="node node-5" cx="14" cy="28" r="2" fill="#00b4d8"/>
+                  <circle class="node node-6" cx="35" cy="27" r="2" fill="#00b4d8"/>
+                  <circle class="node node-7" cx="18" cy="33" r="2.5" fill="#00f5a0"/>
+                  <circle class="node node-8" cx="32" cy="34" r="2" fill="#00b4d8"/>
+                </g>
               </svg>
             </div>
             <span>mpowerio.ai</span>
