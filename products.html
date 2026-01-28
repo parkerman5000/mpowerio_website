@@ -8,7 +8,527 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+/* ==========================================================================
+   mpowerio.ai - v2.8 CyanGreen Synapse Spark
+   ========================================================================== */
+
+:root {
+  --bg-primary: #0f1018;
+  --bg-secondary: #161622;
+  --bg-tertiary: #1e1e30;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --tech-blue: #1e5799;
+  --tech-blue-light: #4a90d9;
+  --accent-cyan: #00b4d8;
+  --accent-cyan-glow: rgba(0, 180, 216, 0.6);
+  --nature-green: #4ca64c;
+  --accent-mint: #00f5a0;
+  --accent-mint-glow: rgba(0, 245, 160, 0.6);
+  --accent-orange: #ff6b35;
+  --accent-orange-glow: rgba(255, 107, 53, 0.5);
+  --accent-gold: #ffc107;
+  --accent-gold-glow: rgba(255, 193, 7, 0.5);
+  --accent-purple: #7b2cbf;
+  --accent-purple-glow: rgba(123, 44, 191, 0.5);
+  --gradient-primary: linear-gradient(135deg, #1e5799 0%, #00b4d8 40%, #4ca64c 100%);
+  --gradient-spark: linear-gradient(135deg, #ff6b35 0%, #ffc107 50%, #00f5a0 100%);
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-muted: #8a8a9a;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(0, 180, 216, 0.3);
+  --shadow-glow-cyan: 0 0 30px var(--accent-cyan-glow);
+  --shadow-glow-spark: 0 0 40px var(--accent-orange-glow), 0 0 80px var(--accent-gold-glow);
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    linear-gradient(rgba(0, 180, 216, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 180, 216, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+img { display: block; max-width: 100%; }
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(15, 16, 24, 0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 700;
+  font-size: var(--text-xl);
+}
+
+.logo span {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-animated {
+  width: 50px;
+  height: 50px;
+}
+
+.logo-animated svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes glow-ring-pulse {
+  0%, 100% { opacity: 0.6; stroke-width: 2; }
+  50% { opacity: 1; stroke-width: 3; }
+}
+
+@keyframes node-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
+.glow-ring { animation: glow-ring-pulse 3s ease-in-out infinite; }
+.node-1 { animation: node-pulse 2s ease-in-out infinite; }
+.node-2 { animation: node-pulse 2.3s ease-in-out infinite 0.2s; }
+.node-3 { animation: node-pulse 2.1s ease-in-out infinite 0.4s; }
+.node-4 { animation: node-pulse 2.5s ease-in-out infinite 0.1s; }
+.node-5 { animation: node-pulse 2.2s ease-in-out infinite 0.5s; }
+.node-6 { animation: node-pulse 2.4s ease-in-out infinite 0.3s; }
+.node-7 { animation: node-pulse 2.6s ease-in-out infinite 0.15s; }
+.node-8 { animation: node-pulse 2.1s ease-in-out infinite 0.35s; }
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.nav__link {
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.nav__link:hover,
+.nav__link--active {
+  color: var(--text-primary);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-xl);
+  font-weight: 600;
+  font-size: var(--text-base);
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn--primary {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border-accent);
+}
+
+.btn--secondary:hover {
+  background: rgba(0, 180, 216, 0.1);
+  border-color: var(--accent-cyan);
+}
+
+.btn--full { width: 100%; }
+.btn--large { padding: var(--space-lg) var(--space-2xl); font-size: var(--text-lg); }
+
+/* Section */
+.section {
+  padding: 6rem 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.section-header__label {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--accent-cyan);
+  margin-bottom: var(--space-lg);
+}
+
+.section-header__title {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-md);
+  line-height: 1.1;
+}
+
+.section-header__text {
+  color: var(--text-muted);
+  font-size: var(--text-lg);
+}
+
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Page Hero */
+.page-hero {
+  padding-top: calc(80px + 4rem);
+  padding-bottom: 3rem;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+
+@media (max-width: 968px) {
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .grid--3 { grid-template-columns: 1fr; }
+}
+
+/* Pricing Cards */
+.pricing-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-2xl);
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.pricing-card--featured {
+  border-color: var(--accent-cyan);
+  background: linear-gradient(135deg, rgba(0, 180, 216, 0.08) 0%, rgba(0, 245, 160, 0.04) 100%);
+}
+
+.pricing-card--featured::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+}
+
+.pricing-card__badge {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  padding: var(--space-xs) var(--space-md);
+  background: var(--gradient-primary);
+  color: white;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+}
+
+.pricing-card__name {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.pricing-card__price {
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pricing-card__period {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.pricing-card__desc {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.pricing-card__features {
+  flex: 1;
+  margin-bottom: var(--space-xl);
+}
+
+.pricing-card__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+}
+
+.pricing-card__feature svg {
+  width: 20px;
+  height: 20px;
+  color: var(--accent-mint);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Footer */
+.footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  padding: 4rem 0 1.5rem;
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer__title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-lg);
+  color: var(--text-muted);
+}
+
+.footer__links li { margin-bottom: var(--space-sm); }
+.footer__links a {
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+.footer__links a:hover { color: var(--accent-cyan); }
+
+.footer__social {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  color: var(--text-muted);
+  transition: all 0.25s ease;
+}
+
+.social-btn:hover {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  box-shadow: var(--shadow-glow-cyan);
+  transform: translateY(-2px);
+}
+
+.footer__bottom {
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+/* Mobile Hamburger Menu */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1001;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--bg-secondary);
+    flex-direction: column;
+    padding: 100px var(--space-xl) var(--space-xl);
+    gap: var(--space-lg);
+    transition: right 0.3s ease;
+    border-left: 1px solid var(--border-subtle);
+  }
+
+  .nav--open {
+    right: 0;
+  }
+
+  .nav__link {
+    font-size: var(--text-lg);
+    padding: var(--space-sm) 0;
+  }
+
+  .nav .btn {
+    width: 100%;
+    margin-top: var(--space-md);
+  }
+
+  .footer__inner { grid-template-columns: 1fr 1fr; }
+  .footer__bottom { flex-direction: column; gap: var(--space-md); text-align: center; }
+}
+
+/* Reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+
+.text-center { text-align: center; }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -27,29 +547,19 @@
                 <stop offset="0%" stop-color="#1a1a2e"/>
                 <stop offset="100%" stop-color="#0a0a0f"/>
               </radialGradient>
-              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
-                <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
             </defs>
             <circle cx="25" cy="25" r="23" fill="url(#bgGradient)"/>
             <circle class="glow-ring" cx="25" cy="25" r="21" fill="none" stroke="url(#logoRingGradient)" stroke-width="2.5" opacity="0.8"/>
-            <circle cx="25" cy="25" r="18" fill="none" stroke="#00b4d8" stroke-width="0.5" opacity="0.3"/>
-            <g stroke="#00b4d8" stroke-width="0.8" opacity="0.6" filter="url(#glow)">
+            <g stroke="#00b4d8" stroke-width="0.8" opacity="0.6">
               <line x1="25" y1="14" x2="17" y2="20"/><line x1="25" y1="14" x2="33" y2="18"/>
-              <line x1="17" y1="20" x2="14" y2="28"/><line x1="17" y1="20" x2="25" y2="25"/>
-              <line x1="33" y1="18" x2="25" y2="25"/><line x1="33" y1="18" x2="35" y2="27"/>
+              <line x1="17" y1="20" x2="25" y2="25"/><line x1="33" y1="18" x2="25" y2="25"/>
               <line x1="25" y1="25" x2="18" y2="33"/><line x1="25" y1="25" x2="32" y2="34"/>
-              <line x1="14" y1="28" x2="18" y2="33"/><line x1="35" y1="27" x2="32" y2="34"/>
-              <line x1="18" y1="33" x2="32" y2="34"/>
             </g>
-            <g filter="url(#glow)">
+            <g>
               <circle class="node node-1" cx="25" cy="14" r="3" fill="#00f5a0"/>
               <circle class="node node-2" cx="17" cy="20" r="2.5" fill="#00b4d8"/>
               <circle class="node node-3" cx="33" cy="18" r="2.5" fill="#00f5a0"/>
               <circle class="node node-4" cx="25" cy="25" r="3.5" fill="#00f5a0"/>
-              <circle class="node node-5" cx="14" cy="28" r="2" fill="#00b4d8"/>
-              <circle class="node node-6" cx="35" cy="27" r="2" fill="#00b4d8"/>
               <circle class="node node-7" cx="18" cy="33" r="2.5" fill="#00f5a0"/>
               <circle class="node node-8" cx="32" cy="34" r="2" fill="#00b4d8"/>
             </g>
@@ -57,25 +567,23 @@
         </div>
         <span>mpowerio.ai</span>
       </a>
-
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
-
-      <nav class="nav" id="nav">
+      <nav class="nav">
         <a href="index.html" class="nav__link">Home</a>
         <a href="products.html" class="nav__link nav__link--active">Products</a>
         <a href="about.html" class="nav__link">About</a>
         <a href="contact.html" class="nav__link">Contact</a>
-        <a href="contact.html" class="btn btn--primary nav__cta">Book a Demo</a>
+        <a href="contact.html" class="btn btn--primary">Book a Demo</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="contact-hero">
+  <!-- Page Hero -->
+  <section class="page-hero">
     <div class="container">
       <div class="section-header">
         <span class="section-header__label">Products & Pricing</span>
@@ -107,23 +615,23 @@
           <p class="pricing-card__desc">Perfect for small businesses just getting started with AI.</p>
           <ul class="pricing-card__features">
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               1 language
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               500 minutes/month
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Basic call routing
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Email support
             </li>
           </ul>
-          <a href="checkout.html?product=phone-agents&tier=starter" class="btn btn--secondary btn--full">Get Started</a>
+          <a href="contact.html" class="btn btn--secondary btn--full">Get Started</a>
         </div>
 
         <div class="pricing-card pricing-card--featured reveal reveal-delay-1">
@@ -134,27 +642,27 @@
           <p class="pricing-card__desc">For growing businesses that need multilingual support.</p>
           <ul class="pricing-card__features">
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               3 languages
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               2,000 minutes/month
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Advanced call routing
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               CRM integration
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Priority support
             </li>
           </ul>
-          <a href="checkout.html?product=phone-agents&tier=growth" class="btn btn--primary btn--full">Get Started</a>
+          <a href="contact.html" class="btn btn--primary btn--full">Get Started</a>
         </div>
 
         <div class="pricing-card reveal reveal-delay-2">
@@ -164,24 +672,20 @@
           <p class="pricing-card__desc">For businesses that need unlimited scale and custom solutions.</p>
           <ul class="pricing-card__features">
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               25+ languages
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Unlimited minutes
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Custom voice clone
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Dedicated account manager
-            </li>
-            <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Custom integrations
             </li>
           </ul>
           <a href="contact.html" class="btn btn--secondary btn--full">Contact Sales</a>
@@ -210,23 +714,19 @@
           <p class="pricing-card__desc">Perfect for personal use or testing.</p>
           <ul class="pricing-card__features">
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               1 voice clone
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               10,000 characters/month
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Personal use license
             </li>
-            <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Email support
-            </li>
           </ul>
-          <a href="checkout.html?product=voice-clones&tier=basic" class="btn btn--secondary btn--full">Get Started</a>
+          <a href="contact.html" class="btn btn--secondary btn--full">Get Started</a>
         </div>
 
         <div class="pricing-card pricing-card--featured reveal reveal-delay-1">
@@ -237,27 +737,23 @@
           <p class="pricing-card__desc">For businesses that need commercial rights.</p>
           <ul class="pricing-card__features">
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               3 voice clones
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               100,000 characters/month
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Commercial license
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Priority support
-            </li>
-            <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               API access
             </li>
           </ul>
-          <a href="checkout.html?product=voice-clones&tier=pro" class="btn btn--primary btn--full">Get Started</a>
+          <a href="contact.html" class="btn btn--primary btn--full">Get Started</a>
         </div>
 
         <div class="pricing-card reveal reveal-delay-2">
@@ -267,24 +763,20 @@
           <p class="pricing-card__desc">Unlimited voices and usage for large organizations.</p>
           <ul class="pricing-card__features">
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Unlimited voice clones
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Unlimited characters
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Full API access
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Dedicated support
-            </li>
-            <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Custom SLA
             </li>
           </ul>
           <a href="contact.html" class="btn btn--secondary btn--full">Contact Sales</a>
@@ -313,23 +805,19 @@
           <p class="pricing-card__desc">Get started with AI video creation.</p>
           <ul class="pricing-card__features">
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               1 avatar
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               10 videos/month
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               5 min max per video
             </li>
-            <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Standard templates
-            </li>
           </ul>
-          <a href="checkout.html?product=avatars&tier=starter" class="btn btn--secondary btn--full">Get Started</a>
+          <a href="contact.html" class="btn btn--secondary btn--full">Get Started</a>
         </div>
 
         <div class="pricing-card pricing-card--featured reveal reveal-delay-1">
@@ -340,27 +828,23 @@
           <p class="pricing-card__desc">For teams that need more capacity and customization.</p>
           <ul class="pricing-card__features">
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               3 avatars
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               50 videos/month
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               15 min max per video
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Custom backgrounds
             </li>
-            <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Brand kit integration
-            </li>
           </ul>
-          <a href="checkout.html?product=avatars&tier=business" class="btn btn--primary btn--full">Get Started</a>
+          <a href="contact.html" class="btn btn--primary btn--full">Get Started</a>
         </div>
 
         <div class="pricing-card reveal reveal-delay-2">
@@ -370,24 +854,20 @@
           <p class="pricing-card__desc">For organizations needing custom avatars and scale.</p>
           <ul class="pricing-card__features">
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Custom avatar creation
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Unlimited videos
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               API access
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Interactive avatars
-            </li>
-            <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Dedicated support
             </li>
           </ul>
           <a href="contact.html" class="btn btn--secondary btn--full">Contact Sales</a>
@@ -416,23 +896,19 @@
           <p class="pricing-card__desc">Perfect for launches and campaigns.</p>
           <ul class="pricing-card__features">
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Single page
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Mobile responsive
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Contact form
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              SEO basics
-            </li>
-            <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               2 weeks delivery
             </li>
           </ul>
@@ -447,27 +923,19 @@
           <p class="pricing-card__desc">Full business website with CMS.</p>
           <ul class="pricing-card__features">
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               5-10 pages
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Content management system
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Blog functionality
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Advanced SEO
-            </li>
-            <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Analytics setup
-            </li>
-            <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               4 weeks delivery
             </li>
           </ul>
@@ -481,24 +949,20 @@
           <p class="pricing-card__desc">Full online store with payment processing.</p>
           <ul class="pricing-card__features">
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Product catalog
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Shopping cart
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Payment integration
             </li>
             <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               Inventory management
-            </li>
-            <li class="pricing-card__feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Custom integrations
             </li>
           </ul>
           <a href="contact.html" class="btn btn--secondary btn--full">Get Quote</a>
@@ -526,45 +990,114 @@
       <div class="footer__inner">
         <div class="footer__brand">
           <a href="index.html" class="logo">
+            <div class="logo-animated" style="width: 40px; height: 40px;">
+              <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="logoRingGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#00f5a0"/><stop offset="50%" stop-color="#00b4d8"/><stop offset="100%" stop-color="#7b2cbf"/>
+                  </linearGradient>
+                  <radialGradient id="bgGradient2" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#0a0a0f"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="25" cy="25" r="23" fill="url(#bgGradient2)"/>
+                <circle class="glow-ring" cx="25" cy="25" r="21" fill="none" stroke="url(#logoRingGradient2)" stroke-width="2.5" opacity="0.8"/>
+                <g stroke="#00b4d8" stroke-width="0.8" opacity="0.6">
+                  <line x1="25" y1="14" x2="17" y2="20"/><line x1="25" y1="14" x2="33" y2="18"/>
+                  <line x1="17" y1="20" x2="25" y2="25"/><line x1="33" y1="18" x2="25" y2="25"/>
+                  <line x1="25" y1="25" x2="18" y2="33"/><line x1="25" y1="25" x2="32" y2="34"/>
+                </g>
+                <g>
+                  <circle cx="25" cy="14" r="2.5" fill="#00f5a0"/>
+                  <circle cx="17" cy="20" r="2" fill="#00b4d8"/>
+                  <circle cx="33" cy="18" r="2" fill="#00f5a0"/>
+                  <circle cx="25" cy="25" r="3" fill="#00f5a0"/>
+                  <circle cx="18" cy="33" r="2" fill="#00f5a0"/>
+                  <circle cx="32" cy="34" r="2" fill="#00b4d8"/>
+                </g>
+              </svg>
+            </div>
             <span>mpowerio.ai</span>
           </a>
-          <p>Quality Inputs producing Quantum Outputs. AI-powered products for modern businesses.</p>
+          <p style="color: var(--text-muted); margin-top: 1rem; max-width: 300px;">Quality Inputs producing Quantum Outputs. AI-powered products for modern businesses.</p>
         </div>
-
-        <div class="footer__col">
+        <div>
           <h4 class="footer__title">Products</h4>
           <ul class="footer__links">
-            <li><a href="#phone-agents">AI Phone Agents</a></li>
-            <li><a href="#voice-clones">Voice Clones</a></li>
-            <li><a href="#avatars">VirtualU Avatars</a></li>
-            <li><a href="#websites">Custom Websites</a></li>
+            <li><a href="products.html#phone-agents">AI Phone Agents</a></li>
+            <li><a href="products.html#voice-clones">Voice Clones</a></li>
+            <li><a href="products.html#avatars">VirtualU Avatars</a></li>
+            <li><a href="products.html#websites">Custom Websites</a></li>
           </ul>
         </div>
-
-        <div class="footer__col">
+        <div>
           <h4 class="footer__title">Company</h4>
           <ul class="footer__links">
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="products.html">Pricing</a></li>
           </ul>
         </div>
-
-        <div class="footer__col">
+        <div>
           <h4 class="footer__title">Connect</h4>
           <ul class="footer__links">
             <li><a href="mailto:hello@mpowerio.ai">hello@mpowerio.ai</a></li>
             <li><a href="contact.html">Book a Demo</a></li>
           </ul>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/profile.php?id=61587036365320" target="_blank" rel="noopener" aria-label="Facebook" class="social-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://instagram.com/mpowerio.ai" target="_blank" rel="noopener" aria-label="Instagram" class="social-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://youtube.com/@mpowerio" target="_blank" rel="noopener" aria-label="YouTube" class="social-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://x.com/mpowerioAI" target="_blank" rel="noopener" aria-label="X" class="social-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
         </div>
       </div>
-
       <div class="footer__bottom">
-        <p>&copy; 2024 mpowerio.ai LLC. All rights reserved.</p>
+        <p>&copy; 2025 mpowerio.ai LLC. All rights reserved.</p>
         <p>Quality Inputs producing Quantum Outputs</p>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script>
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => observer.observe(el));
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', () => {
+        nav.classList.toggle('nav--open');
+        navToggle.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', nav.classList.contains('nav--open'));
+      });
+
+      nav.querySelectorAll('.nav__link').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('nav--open');
+          navToggle.classList.remove('active');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  </script>
 </body>
 </html>

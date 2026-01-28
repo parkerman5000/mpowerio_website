@@ -69,8 +69,6 @@
   const header = document.querySelector('.header');
 
   if (header) {
-    let lastScroll = 0;
-
     window.addEventListener('scroll', function() {
       const currentScroll = window.pageYOffset;
 
@@ -81,8 +79,6 @@
         header.style.background = 'rgba(10, 10, 15, 0.8)';
         header.style.borderBottomColor = 'rgba(255, 255, 255, 0.08)';
       }
-
-      lastScroll = currentScroll;
     });
   }
 
@@ -128,7 +124,6 @@
 
       // Show loading state
       const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
       submitBtn.textContent = 'Sending...';
       submitBtn.disabled = true;
 
