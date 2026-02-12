@@ -385,7 +385,7 @@ p {
 .nav {
   display: flex;
   align-items: center;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
 }
 
 .nav__link {
@@ -1054,8 +1054,8 @@ p {
    Page Hero (Subpages)
    -------------------------------------------------------------------------- */
 .page-hero {
-  padding-top: calc(80px + var(--space-4xl));
-  padding-bottom: var(--space-3xl);
+  padding-top: calc(80px + var(--space-2xl));
+  padding-bottom: var(--space-xl);
   position: relative;
   z-index: 2;
 }
@@ -1421,11 +1421,11 @@ p {
 /* Cal.com Embed */
 .cal-embed {
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-2xl);
-  padding: var(--space-xl);
+  border: 1px solid rgba(0, 180, 216, 0.15);
+  border-radius: var(--radius-lg);
   backdrop-filter: blur(20px);
   min-height: 500px;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
