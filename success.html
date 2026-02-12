@@ -7,11 +7,11 @@
   <title>Payment Successful | mpowerio.ai</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header (Logo Only) -->
   <header class="header">
     <div class="container header__inner">
       <a href="index.html" class="logo">
@@ -72,23 +72,23 @@
         You'll receive a confirmation email shortly with next steps.
       </p>
 
-      <div style="background: var(--light-surface); border: 1px solid var(--light-border); border-radius: var(--radius-xl); padding: var(--space-xl); margin-bottom: var(--space-2xl); text-align: left;">
+      <div class="success-card">
         <h3 style="margin-bottom: var(--space-lg); font-size: var(--text-lg);">What Happens Next?</h3>
-        <ol style="color: var(--muted-text); padding-left: var(--space-lg);">
+        <ol style="color: var(--text-muted); padding-left: var(--space-lg); list-style: decimal;">
           <li style="margin-bottom: var(--space-md);">
-            <strong style="color: var(--dark-text);">Check your email</strong><br>
+            <strong style="color: var(--text-primary);">Check your email</strong><br>
             You'll receive a receipt and welcome email within the next few minutes.
           </li>
           <li style="margin-bottom: var(--space-md);">
-            <strong style="color: var(--dark-text);">Schedule your kickoff call</strong><br>
+            <strong style="color: var(--text-primary);">Schedule your kickoff call</strong><br>
             We'll send you a calendar link to book your first strategy session.
           </li>
           <li style="margin-bottom: var(--space-md);">
-            <strong style="color: var(--dark-text);">Get onboarded</strong><br>
+            <strong style="color: var(--text-primary);">Get onboarded</strong><br>
             Receive access to our client portal and communication channels.
           </li>
           <li>
-            <strong style="color: var(--dark-text);">Start transforming</strong><br>
+            <strong style="color: var(--text-primary);">Start transforming</strong><br>
             Let's build something amazing together!
           </li>
         </ol>
@@ -99,13 +99,13 @@
         <a href="contact.html" class="btn btn--secondary">Contact Support</a>
       </div>
 
-      <p style="margin-top: var(--space-2xl); font-size: var(--text-sm); color: var(--muted-text);">
-        Questions? Reach out to <a href="mailto:hello@mpowerio.ai" style="color: var(--tech-blue);">hello@mpowerio.ai</a>
+      <p style="margin-top: var(--space-2xl); font-size: var(--text-sm); color: var(--text-muted);">
+        Questions? Reach out to <a href="mailto:michael.parker@mpowerio.ai" style="color: var(--accent-cyan);">michael.parker@mpowerio.ai</a>
       </p>
     </div>
   </section>
 
-  <!-- Confetti Animation (optional fun touch) -->
+  <!-- Confetti Animation -->
   <style>
     @keyframes confetti-fall {
       0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
@@ -118,12 +118,13 @@
       height: 10px;
       animation: confetti-fall 4s linear forwards;
       pointer-events: none;
+      z-index: 10;
     }
   </style>
   <script>
     // Simple confetti effect
     function createConfetti() {
-      const colors = ['#2563eb', '#22c55e', '#0ea5e9', '#f59e0b'];
+      const colors = ['#1e5799', '#00b4d8', '#4ca64c', '#00f5a0', '#ff6b35', '#ffc107'];
       for (let i = 0; i < 50; i++) {
         setTimeout(() => {
           const confetti = document.createElement('div');
@@ -140,6 +141,16 @@
     createConfetti();
   </script>
 
-  <script src="js/main.js"></script>
+  <!-- Footer -->
+  <footer class="footer" style="position: relative; z-index: 2;">
+    <div class="container">
+      <div class="footer__bottom" style="border: none; padding-top: 0;">
+        <p>&copy; 2026 mpowerio.ai LLC. All rights reserved.</p>
+        <p>Quality Inputs producing Quantum Outputs</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
 </body>
 </html>

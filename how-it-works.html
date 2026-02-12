@@ -3,23 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Book a free demo or send us a message. We respond within 24 hours.">
-  <meta property="og:title" content="Contact | mpowerio.ai">
-  <meta property="og:description" content="Book a free demo or send us a message. We respond within 24 hours.">
+  <meta name="description" content="13 hooks. Autonomous agents. RTX 5090 local inference. See the technology powering mpowerio.ai.">
+  <meta property="og:title" content="How It Works | mpowerio.ai">
+  <meta property="og:description" content="13 hooks. Autonomous agents. RTX 5090 local inference. See the technology powering mpowerio.ai.">
   <meta property="og:type" content="website">
-  <title>Contact | mpowerio.ai</title>
+  <title>How It Works | mpowerio.ai</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/design-system.css">
-  <!-- Cal.com embed -->
-  <script type="text/javascript">
-    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", {origin:"https://cal.com"});
-    Cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-  </script>
 </head>
 <body>
+
   <!-- Header -->
   <header class="header">
     <div class="container header__inner">
@@ -72,10 +67,10 @@
       <nav class="nav">
         <a href="index.html" class="nav__link">Home</a>
         <a href="products.html" class="nav__link">Products</a>
-        <a href="how-it-works.html" class="nav__link">How It Works</a>
+        <a href="how-it-works.html" class="nav__link nav__link--active">How It Works</a>
         <a href="case-studies.html" class="nav__link">Case Studies</a>
         <a href="about.html" class="nav__link">About</a>
-        <a href="contact.html" class="nav__link nav__link--active">Contact</a>
+        <a href="contact.html" class="nav__link">Contact</a>
         <a href="contact.html" class="btn btn--primary">Book a Demo</a>
       </nav>
     </div>
@@ -85,128 +80,139 @@
   <section class="page-hero">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-header__label">Get in Touch</span>
-        <h1 class="section-header__title">Let's <span class="text-gradient">Talk</span></h1>
-        <p class="section-header__text">
-          Ready to transform your business with AI? Book a free demo or send us a message.
-        </p>
+        <span class="section-header__label">How It Works</span>
+        <h1 class="section-header__title">The <span class="text-gradient">mpowerio.ai</span> Stack</h1>
+        <p class="section-header__text">13 hooks. Autonomous agents. Local GPU inference. No cloud rate limits.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact Content -->
-  <section class="section" style="padding-top: 0;">
+  <!-- Section 1 — Hooks (image LEFT, details RIGHT) -->
+  <section class="section">
     <div class="container">
-      <div class="contact-grid">
-        <!-- Cal.com Booking -->
-        <div class="fade-in">
-          <h2 style="margin-bottom: var(--space-lg);">Book a Demo</h2>
-          <p style="color: var(--text-muted); margin-bottom: var(--space-xl);">
-            Schedule a free 30-minute call to discuss your needs and see our products in action.
-          </p>
-
-          <div class="cal-embed">
-            <div
-              data-cal-link="mic-parker-5712gz"
-              data-cal-config='{"layout":"month_view"}'
-              style="width:100%;height:100%;overflow:scroll;min-height:450px"
-            ></div>
-          </div>
+      <div class="arch-grid fade-in">
+        <div class="arch-visual">
+          <img src="images/hooked.png" alt="Claude Code hooks lifecycle visualization">
         </div>
-
-        <!-- Contact Form -->
-        <div class="fade-in">
-          <h2 style="margin-bottom: var(--space-lg);">Send a Message</h2>
-          <p style="color: var(--text-muted); margin-bottom: var(--space-xl);">
-            Prefer email? Fill out the form and we'll get back to you within 24 hours.
-          </p>
-
-          <div class="contact-form-wrapper">
-            <form id="contact-form">
-              <div class="form-group">
-                <label class="form-label" for="name">Your Name *</label>
-                <input type="text" id="name" name="name" class="form-input" required placeholder="John Doe">
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="email">Email Address *</label>
-                <input type="email" id="email" name="email" class="form-input" required placeholder="john@example.com">
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="company">Company Name</label>
-                <input type="text" id="company" name="company" class="form-input" placeholder="Acme Inc.">
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="product">Interested In</label>
-                <select id="product" name="product" class="form-select">
-                  <option value="">Select a plan...</option>
-                  <option value="starter">Starter Plan ($297/mo)</option>
-                  <option value="growth">Growth Plan ($497/mo)</option>
-                  <option value="scale">Scale Plan ($797/mo)</option>
-                  <option value="not-sure">Not sure yet</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="message">Your Message *</label>
-                <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about your project or what you're looking for..."></textarea>
-              </div>
-
-              <button type="submit" class="btn btn--primary btn--full btn--large">
-                Send Message
-              </button>
-            </form>
-          </div>
+        <div class="arch-details">
+          <h3 class="text-gradient">13 Lifecycle Hooks</h3>
+          <p>Every action triggers a hook. Every hook runs a guardrail. Nothing happens without oversight.</p>
+          <ul class="arch-list">
+            <li>PreToolUse hooks validate before any file edit or command</li>
+            <li>PostToolUse hooks log and audit every action taken</li>
+            <li>Damage control guardrails block destructive operations</li>
+            <li>Real-time observability via LivePulse dashboard</li>
+          </ul>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Contact Info Cards -->
-      <div class="grid grid--4 fade-in" style="margin-top: var(--space-3xl);">
-        <div class="contact-item">
-          <div class="contact-item__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div>
-            <p class="contact-item__title">Email</p>
-            <p class="contact-item__text">
-              <a href="mailto:michael.parker@mpowerio.ai" style="color: var(--accent-cyan);">michael.parker@mpowerio.ai</a>
-            </p>
-          </div>
+  <!-- Section 2 — Agents (image RIGHT, details LEFT) -->
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="arch-grid fade-in" style="direction: rtl;">
+        <div class="arch-visual" style="direction: ltr;">
+          <img src="images/subagents.png" alt="Claude Code sub-agent orchestration">
         </div>
+        <div class="arch-details" style="direction: ltr;">
+          <h3 class="text-gradient">Autonomous Sub-Agents</h3>
+          <p>Specialized agents handle voice, CRM, content, and social media. Each one proves revenue value before we build the next.</p>
+          <ul class="arch-list">
+            <li>Voice agents handle inbound/outbound calls 24/7</li>
+            <li>CRM agents manage pipelines and automated follow-ups</li>
+            <li>Content agents generate social media posts and video scripts</li>
+            <li>Each agent deployed one at a time, each tied to a paid service line</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="contact-item">
-          <div class="contact-item__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <div>
-            <p class="contact-item__title">Phone</p>
-            <p class="contact-item__text">
-              <a href="tel:+18036402595" style="color: var(--accent-cyan);">(803) 640-2595</a>
-            </p>
-          </div>
+  <!-- Section 3 — Agent Flow (image LEFT, details RIGHT) -->
+  <section class="section">
+    <div class="container">
+      <div class="arch-grid fade-in">
+        <div class="arch-visual">
+          <img src="images/SubAgentFlow.gif" alt="Sub-agent orchestration flow">
         </div>
+        <div class="arch-details">
+          <h3 class="text-gradient">Agent Chain Orchestration</h3>
+          <p>Agents don't work in isolation. They chain together — voice agent captures a lead, CRM agent nurtures it, content agent amplifies it.</p>
+          <ul class="arch-list">
+            <li>Lead captured by voice agent → pushed to CRM pipeline</li>
+            <li>CRM triggers automated follow-up sequence</li>
+            <li>Content agent generates social proof from completed jobs</li>
+            <li>Booking agent schedules estimates automatically</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="contact-item">
-          <div class="contact-item__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div>
-            <p class="contact-item__title">Response Time</p>
-            <p class="contact-item__text">Within 24 hours</p>
-          </div>
+  <!-- Section 4 — Gen UI (image RIGHT, details LEFT) -->
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="arch-grid fade-in" style="direction: rtl;">
+        <div class="arch-visual" style="direction: ltr;">
+          <img src="images/genui.png" alt="Generated UI dashboards">
         </div>
+        <div class="arch-details" style="direction: ltr;">
+          <h3 class="text-gradient">On-Demand Dashboards</h3>
+          <p>Every client gets a real-time dashboard showing calls handled, leads captured, content published, and revenue generated.</p>
+          <ul class="arch-list">
+            <li>Live call analytics and voice agent performance</li>
+            <li>CRM pipeline visualization with conversion rates</li>
+            <li>Content calendar with scheduled and published posts</li>
+            <li>ROI tracking — see exactly what your investment produces</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="contact-item">
-          <div class="contact-item__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div>
-            <p class="contact-item__title">Location</p>
-            <p class="contact-item__text">Remote-first, serving clients nationwide</p>
-          </div>
+  <!-- Section 5 — The Machine (Specs Bar) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-header__title">The Machine <span class="text-gradient">Behind It All</span></h2>
+        <p class="section-header__text">No cloud fees. No rate limits. Your data stays on our hardware.</p>
+      </div>
+      <div class="specs-bar fade-in">
+        <div class="spec-item">
+          <div class="spec-value">RTX 5090</div>
+          <div class="spec-label">32GB VRAM</div>
+          <div class="spec-label">GPU</div>
         </div>
+        <div class="spec-item">
+          <div class="spec-value">i9-13900KF</div>
+          <div class="spec-label">24 Cores</div>
+          <div class="spec-label">CPU</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-value">128GB</div>
+          <div class="spec-label">DDR5</div>
+          <div class="spec-label">RAM</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-value">5TB</div>
+          <div class="spec-label">NVMe</div>
+          <div class="spec-label">Storage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container text-center fade-in">
+      <h2 style="margin-bottom: var(--space-md);">Ready to Put This Stack <span class="text-gradient">to Work?</span></h2>
+      <p style="color: var(--text-muted); font-size: var(--text-xl); margin-bottom: var(--space-2xl); max-width: 600px; margin-left: auto; margin-right: auto;">
+        See what 13 hooks, autonomous agents, and local GPU inference can do for your business.
+      </p>
+      <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn--spark btn--large">Book a Demo</a>
+        <a href="products.html" class="btn btn--secondary btn--large">View Plans</a>
       </div>
     </div>
   </section>
