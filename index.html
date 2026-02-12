@@ -3,984 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mpowerio.ai v2.95 "Synapse Spark"</title>
-  <meta name="facebook-domain-verification" content="your-verification-code-here" />
+  <title>mpowerio.ai — Quality Inputs producing Quantum Outputs</title>
+  <meta name="description" content="AI-powered automation for modern businesses. Voice agents, CRM, websites, content engines, and more. Book a demo today.">
+  <meta property="og:title" content="mpowerio.ai — Quality Inputs producing Quantum Outputs">
+  <meta property="og:description" content="AI-powered automation for modern businesses. Voice agents, CRM, websites, content engines, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mpowerio.ai">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-/* ==========================================================================
-   mpowerio.ai -  "Synapse Spark" 
-   ========================================================================== */
-
-:root {
-  --bg-primary: #0f1018;
-  --bg-secondary: #161622;
-  --bg-tertiary: #1e1e30;
-  --bg-card: rgba(255, 255, 255, 0.04);
-  --bg-card-hover: rgba(255, 255, 255, 0.08);
-  --tech-blue: #1e5799;
-  --tech-blue-light: #4a90d9;
-  --accent-cyan: #00b4d8;
-  --accent-cyan-glow: rgba(0, 180, 216, 0.6);
-  --nature-green: #4ca64c;
-  --accent-mint: #00f5a0;
-  --accent-mint-glow: rgba(0, 245, 160, 0.6);
-  --accent-orange: #ff6b35;
-  --accent-orange-glow: rgba(255, 107, 53, 0.5);
-  --accent-gold: #ffc107;
-  --accent-gold-glow: rgba(255, 193, 7, 0.5);
-  --accent-purple: #7b2cbf;
-  --accent-purple-glow: rgba(123, 44, 191, 0.5);
-  --gradient-primary: linear-gradient(135deg, #1e5799 0%, #00b4d8 40%, #4ca64c 100%);
-  --gradient-spark: linear-gradient(135deg, #ff6b35 0%, #ffc107 50%, #00f5a0 100%);
-  --text-primary: #ffffff;
-  --text-secondary: #e0e0e0;
-  --text-muted: #8a8a9a;
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-accent: rgba(0, 180, 216, 0.3);
-  --shadow-glow-cyan: 0 0 30px var(--accent-cyan-glow);
-  --shadow-glow-spark: 0 0 40px var(--accent-orange-glow), 0 0 80px var(--accent-gold-glow);
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
-  --radius-full: 9999px;
-  --transition-fast: 150ms ease;
-  --transition-base: 250ms ease;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-5xl: 3rem;
-  --text-7xl: 4.5rem;
-}
-
-*, *::before, *::after { box-sizing: border-box; }
-* { margin: 0; padding: 0; }
-
-body {
-  font-family: var(--font-sans);
-  font-size: var(--text-base);
-  line-height: 1.6;
-  color: var(--text-primary);
-  background: var(--bg-primary);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-  position: relative;
-}
-
-/* SYNAPSE GRID - Enhanced brightness */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image:
-    linear-gradient(rgba(0, 180, 216, 0.10) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 180, 216, 0.10) 1px, transparent 1px),
-    linear-gradient(rgba(76, 166, 76, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(76, 166, 76, 0.06) 1px, transparent 1px),
-    linear-gradient(45deg, transparent 49%, rgba(255, 107, 53, 0.05) 49%, rgba(255, 107, 53, 0.05) 51%, transparent 51%);
-  background-size: 40px 40px, 40px 40px, 120px 120px, 120px 120px, 80px 80px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* AMBIENT ORBS */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: 
-    radial-gradient(ellipse 700px 500px at 85% 15%, rgba(0, 180, 216, 0.20) 0%, transparent 60%),
-    radial-gradient(ellipse 600px 600px at 10% 85%, rgba(0, 245, 160, 0.15) 0%, transparent 55%),
-    radial-gradient(ellipse 500px 400px at 50% 50%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse 400px 350px at 75% 60%, rgba(123, 44, 191, 0.10) 0%, transparent 50%),
-    radial-gradient(ellipse 800px 300px at 50% 100%, rgba(30, 87, 153, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse 300px 300px at 20% 20%, rgba(255, 193, 7, 0.06) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-  animation: orb-drift 25s ease-in-out infinite;
-}
-
-@keyframes orb-drift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(15px, -20px) scale(1.02); }
-  50% { transform: translate(-10px, 10px) scale(0.98); }
-  75% { transform: translate(20px, 15px) scale(1.01); }
-}
-
-/* VAPOR PARTICLES */
-.vapor-container {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.vapor-particle {
-  position: absolute;
-  bottom: -20px;
-  width: 4px;
-  height: 4px;
-  background: radial-gradient(circle, rgba(0, 180, 216, 0.8) 0%, transparent 70%);
-  border-radius: 50%;
-  animation: vapor-rise linear infinite;
-  opacity: 0;
-}
-
-.vapor-particle::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 30px;
-  background: linear-gradient(to top, rgba(0, 180, 216, 0.4), transparent);
-}
-
-.vapor-particle:nth-child(odd) {
-  background: radial-gradient(circle, rgba(0, 245, 160, 0.7) 0%, transparent 70%);
-}
-
-.vapor-particle:nth-child(3n) {
-  background: radial-gradient(circle, rgba(255, 107, 53, 0.6) 0%, transparent 70%);
-}
-
-@keyframes vapor-rise {
-  0% { transform: translateY(0) translateX(0) scale(0.5); opacity: 0; }
-  10% { opacity: 0.8; }
-  50% { opacity: 0.6; transform: translateY(-40vh) translateX(20px) scale(1); }
-  80% { opacity: 0.3; }
-  100% { transform: translateY(-100vh) translateX(-10px) scale(0.3); opacity: 0; }
-}
-
-/* SPARK EFFECTS - Enhanced visibility */
-.spark {
-  position: fixed;
-  width: 12px;
-  height: 12px;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.spark::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%; height: 100%;
-  background: var(--accent-gold);
-  border-radius: 50%;
-  box-shadow: 0 0 15px var(--accent-gold), 0 0 30px var(--accent-orange), 0 0 60px var(--accent-orange-glow), 0 0 100px rgba(255, 193, 7, 0.3);
-  animation: spark-pulse 1s ease-out forwards;
-}
-
-.spark::after {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px; height: 60px;
-  border: 2px solid var(--accent-gold);
-  border-radius: 50%;
-  animation: spark-ring 1s ease-out forwards;
-}
-
-@keyframes spark-pulse {
-  0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
-  30% { transform: translate(-50%, -50%) scale(2.5); opacity: 1; }
-  60% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.7; }
-  100% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
-}
-
-@keyframes spark-ring {
-  0% { transform: translate(-50%, -50%) scale(0); opacity: 1; border-width: 3px; }
-  50% { opacity: 0.8; }
-  100% { transform: translate(-50%, -50%) scale(4); opacity: 0; border-width: 1px; }
-}
-
-.spark-trail {
-  position: fixed;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--accent-gold), var(--accent-orange), var(--accent-gold), transparent);
-  pointer-events: none;
-  z-index: 9;
-  animation: trail-fade 0.6s ease-out forwards;
-  box-shadow: 0 0 10px var(--accent-gold-glow);
-}
-
-@keyframes trail-fade {
-  0% { opacity: 1; transform: scaleX(0); }
-  40% { transform: scaleX(1); opacity: 1; }
-  100% { opacity: 0; transform: scaleX(1.2); }
-}
-
-/* LAYOUT */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
-  position: relative;
-  z-index: 2;
-}
-
-/* HEADER */
-.header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  background: rgba(15, 16, 24, 0.85);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.header__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-weight: 700;
-  font-size: var(--text-xl);
-  text-decoration: none;
-}
-
-.logo span {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ANIMATED NEURAL NETWORK LOGO */
-.logo-animated {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  flex-shrink: 0;
-}
-
-.logo-animated svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.logo-animated .node { transform-origin: center; }
-.logo-animated .node-1 { animation: node-pulse 3s ease-in-out infinite, node-shift-1 8s ease-in-out infinite; }
-.logo-animated .node-2 { animation: node-pulse 3s ease-in-out infinite 0.3s, node-shift-2 7s ease-in-out infinite; }
-.logo-animated .node-3 { animation: node-pulse 3s ease-in-out infinite 0.6s, node-shift-3 9s ease-in-out infinite; }
-.logo-animated .node-4 { animation: node-pulse-center 4s ease-in-out infinite, node-color-shift 6s ease-in-out infinite; }
-.logo-animated .node-5 { animation: node-pulse 3s ease-in-out infinite 0.9s, node-shift-4 8s ease-in-out infinite reverse; }
-.logo-animated .node-6 { animation: node-pulse 3s ease-in-out infinite 1.2s, node-shift-5 7s ease-in-out infinite reverse; }
-.logo-animated .node-7 { animation: node-pulse 3s ease-in-out infinite 1.5s, node-shift-6 9s ease-in-out infinite; }
-.logo-animated .node-8 { animation: node-pulse 3s ease-in-out infinite 1.8s, node-shift-7 8s ease-in-out infinite reverse; }
-.logo-animated .glow-ring { animation: ring-glow 3s ease-in-out infinite, logo-glow 3s ease-in-out infinite; }
-
-@keyframes node-pulse {
-  0%, 100% { transform: scale(1); opacity: 0.9; }
-  50% { transform: scale(1.2); opacity: 1; }
-}
-
-@keyframes node-pulse-center {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.15); opacity: 0.85; }
-}
-
-@keyframes node-shift-1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(1px, 1px) scale(1.1); }
-  50% { transform: translate(-1px, 0.5px) scale(0.95); }
-  75% { transform: translate(0.5px, -1px) scale(1.05); }
-}
-
-@keyframes node-shift-2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-1px, 1px) scale(1.15); }
-  66% { transform: translate(1px, -0.5px) scale(0.9); }
-}
-
-@keyframes node-shift-3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(0.5px, -1px) scale(1.1); }
-  50% { transform: translate(-0.5px, 1px) scale(1); }
-  75% { transform: translate(1px, 0.5px) scale(1.2); }
-}
-
-@keyframes node-shift-4 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-1px, -1px) scale(1.1); }
-}
-
-@keyframes node-shift-5 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(1px, -1px) scale(1.15); }
-  66% { transform: translate(-0.5px, 0.5px) scale(0.95); }
-}
-
-@keyframes node-shift-6 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(-0.5px, -1px) scale(1.05); }
-  75% { transform: translate(0.5px, 1px) scale(1.1); }
-}
-
-@keyframes node-shift-7 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(1px, -0.5px) scale(1.15); }
-}
-
-@keyframes node-color-shift {
-  0%, 100% { fill: #00f5a0; }
-  25% { fill: #00b4d8; }
-  50% { fill: #ff6b35; }
-  75% { fill: #7b2cbf; }
-}
-
-@keyframes ring-glow {
-  0%, 100% { opacity: 0.8; stroke-width: 2.5; }
-  50% { opacity: 1; stroke-width: 3; }
-}
-
-@keyframes logo-glow {
-  0%, 100% { filter: drop-shadow(0 0 3px var(--accent-cyan-glow)); opacity: 0.6; }
-  50% { filter: drop-shadow(0 0 8px var(--accent-mint-glow)); opacity: 0.9; }
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xl);
-}
-
-.nav__link {
-  font-weight: 500;
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-.nav__link:hover, .nav__link--active {
-  color: var(--text-primary);
-}
-
-/* BUTTONS */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-md) var(--space-xl);
-  font-weight: 600;
-  border-radius: var(--radius-lg);
-  border: none;
-  cursor: pointer;
-  transition: all var(--transition-base);
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.5s ease;
-}
-
-.btn:hover::before { left: 100%; }
-
-.btn--primary {
-  background: var(--gradient-primary);
-  color: var(--bg-primary);
-}
-
-.btn--primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-glow-cyan);
-}
-
-.btn--spark {
-  background: var(--gradient-spark);
-  color: var(--bg-primary);
-}
-
-.btn--spark:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-glow-spark);
-}
-
-.btn--secondary {
-  background: transparent;
-  color: var(--text-primary);
-  border: 2px solid var(--border-accent);
-}
-
-.btn--secondary:hover {
-  background: rgba(0, 180, 216, 0.1);
-  border-color: var(--accent-cyan);
-}
-
-.btn--large {
-  padding: var(--space-lg) var(--space-2xl);
-  font-size: var(--text-lg);
-  border-radius: var(--radius-xl);
-}
-
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-top: 80px;
-  position: relative;
-  z-index: 2;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -10%; right: -5%;
-  width: 800px; height: 800px;
-  background: radial-gradient(circle, var(--accent-cyan-glow) 0%, rgba(0, 180, 216, 0.25) 30%, transparent 60%);
-  filter: blur(40px);
-  pointer-events: none;
-  animation: hero-orb-1 12s ease-in-out infinite;
-  z-index: 0;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -15%; left: -10%;
-  width: 700px; height: 700px;
-  background: radial-gradient(circle, var(--accent-mint-glow) 0%, rgba(0, 245, 160, 0.20) 30%, transparent 60%);
-  filter: blur(40px);
-  pointer-events: none;
-  animation: hero-orb-2 15s ease-in-out infinite;
-  z-index: 0;
-}
-
-@keyframes hero-orb-1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-30px, 20px) scale(1.05); }
-  66% { transform: translate(20px, -30px) scale(0.95); }
-}
-
-@keyframes hero-orb-2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(40px, -20px) scale(1.08); }
-}
-
-.hero__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-.hero__tagline {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
-  background: var(--bg-card);
-  border: 1px solid var(--border-accent);
-  border-radius: var(--radius-full);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--accent-cyan);
-  margin-bottom: var(--space-xl);
-  backdrop-filter: blur(10px);
-}
-
-.hero__tagline::before {
-  content: '';
-  width: 8px; height: 8px;
-  background: var(--accent-mint);
-  border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.2); }
-}
-
-.hero__title {
-  font-size: var(--text-7xl);
-  margin-bottom: var(--space-lg);
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-
-.text-gradient {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.text-spark {
-  background: var(--gradient-spark);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero__subtitle {
-  font-size: var(--text-xl);
-  color: var(--text-muted);
-  margin-bottom: var(--space-2xl);
-  line-height: 1.6;
-}
-
-.hero__cta {
-  display: flex;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-}
-
-/* AI WIDGET - SPARK FOCUS ZONE */
-.hero__widget {
-  width: 100%;
-  max-width: 420px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-accent);
-  border-radius: var(--radius-2xl);
-  backdrop-filter: blur(20px);
-  position: relative;
-  overflow: visible;
-}
-
-.hero__widget::before {
-  content: '';
-  position: absolute;
-  inset: -3px;
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-orange), var(--accent-mint));
-  border-radius: calc(var(--radius-2xl) + 3px);
-  z-index: -1;
-  opacity: 0.6;
-  filter: blur(15px);
-  animation: widget-glow 4s ease-in-out infinite;
-}
-
-@keyframes widget-glow {
-  0%, 100% { opacity: 0.4; filter: blur(15px); }
-  50% { opacity: 0.7; filter: blur(25px); }
-}
-
-.hero__widget::after {
-  content: '';
-  position: absolute;
-  top: 50%; left: -100px;
-  width: 100px; height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent-cyan));
-  animation: neural-pulse 3s ease-in-out infinite;
-}
-
-@keyframes neural-pulse {
-  0%, 100% { opacity: 0.3; transform: scaleX(0.5); }
-  50% { opacity: 0.8; transform: scaleX(1); }
-}
-
-.hero__widget-header {
-  padding: var(--space-lg);
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.hero__widget-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-xs) var(--space-sm);
-  background: linear-gradient(135deg, var(--accent-orange), var(--accent-gold));
-  color: var(--bg-primary);
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: var(--radius-full);
-  margin-bottom: var(--space-sm);
-}
-
-.hero__widget-badge::before {
-  content: '';
-  width: 6px; height: 6px;
-  background: var(--bg-primary);
-  border-radius: 50%;
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-.hero__widget-text {
-  font-size: var(--text-lg);
-  font-weight: 600;
-  margin-bottom: var(--space-xs);
-}
-
-.hero__widget-subtext {
-  font-size: var(--text-sm);
-  color: var(--text-muted);
-  margin-bottom: 0;
-}
-
-.hero__widget-embed {
-  padding: var(--space-lg);
-  min-height: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero__widget-embed elevenlabs-convai {
-  width: 100%;
-  min-height: 250px;
-  display: block;
-}
-
-/* Sound wave visualization */
-.widget-soundwave {
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 4px;
-  align-items: flex-end;
-  height: 20px;
-}
-
-.widget-soundwave span {
-  width: 3px;
-  background: var(--gradient-spark);
-  border-radius: 2px;
-  animation: soundwave 1s ease-in-out infinite;
-}
-
-.widget-soundwave span:nth-child(1) { height: 8px; animation-delay: 0s; }
-.widget-soundwave span:nth-child(2) { height: 14px; animation-delay: 0.1s; }
-.widget-soundwave span:nth-child(3) { height: 20px; animation-delay: 0.2s; }
-.widget-soundwave span:nth-child(4) { height: 12px; animation-delay: 0.3s; }
-.widget-soundwave span:nth-child(5) { height: 16px; animation-delay: 0.4s; }
-.widget-soundwave span:nth-child(6) { height: 10px; animation-delay: 0.5s; }
-.widget-soundwave span:nth-child(7) { height: 18px; animation-delay: 0.6s; }
-
-@keyframes soundwave {
-  0%, 100% { transform: scaleY(0.5); opacity: 0.5; }
-  50% { transform: scaleY(1); opacity: 1; }
-}
-
-/* PRODUCTS SECTION */
-.section {
-  padding: 6rem 0;
-  position: relative;
-  z-index: 2;
-}
-
-.section-header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 4rem;
-}
-
-.section-header__label {
-  display: inline-flex;
-  padding: var(--space-xs) var(--space-md);
-  background: var(--bg-card);
-  border: 1px solid var(--border-accent);
-  border-radius: var(--radius-full);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--accent-cyan);
-  margin-bottom: var(--space-lg);
-}
-
-.section-header__title {
-  font-size: var(--text-5xl);
-  margin-bottom: var(--space-md);
-}
-
-.section-header__text {
-  color: var(--text-muted);
-  font-size: var(--text-lg);
-}
-
-.grid { display: grid; gap: var(--space-xl); }
-.grid--2 { grid-template-columns: repeat(2, 1fr); }
-.grid--3 { grid-template-columns: repeat(3, 1fr); }
-
-/* PRODUCT CARDS */
-.product-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-2xl);
-  padding: var(--space-2xl);
-  backdrop-filter: blur(20px);
-  transition: all var(--transition-base);
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.product-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
-  transition: left 0.6s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  border-color: var(--border-accent);
-  box-shadow: var(--shadow-glow-cyan);
-}
-
-.product-card:hover::before { left: 100%; }
-
-.product-card__icon {
-  width: 72px; height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-xl);
-  margin-bottom: var(--space-xl);
-}
-
-.card__icon--cyan {
-  background: linear-gradient(135deg, rgba(0, 180, 216, 0.2) 0%, rgba(0, 180, 216, 0.1) 100%);
-  color: var(--accent-cyan);
-}
-
-.card__icon--mint {
-  background: linear-gradient(135deg, rgba(0, 245, 160, 0.2) 0%, rgba(0, 245, 160, 0.1) 100%);
-  color: var(--accent-mint);
-}
-
-.card__icon--purple {
-  background: linear-gradient(135deg, rgba(123, 44, 191, 0.2) 0%, rgba(123, 44, 191, 0.1) 100%);
-  color: var(--accent-purple);
-}
-
-.card__icon--spark {
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(255, 193, 7, 0.1) 100%);
-  color: var(--accent-orange);
-}
-
-.product-card__title {
-  font-size: var(--text-2xl);
-  margin-bottom: var(--space-sm);
-}
-
-.product-card__text {
-  color: var(--text-muted);
-  margin-bottom: var(--space-lg);
-  flex: 1;
-}
-
-.product-card__price {
-  font-size: var(--text-sm);
-  color: var(--accent-cyan);
-  font-weight: 600;
-  margin-bottom: var(--space-lg);
-}
-
-/* FOOTER */
-.footer {
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--border-subtle);
-  padding: 3rem 0 1rem;
-  position: relative;
-  z-index: 2;
-}
-
-.footer::before {
-  content: '';
-  position: absolute;
-  top: -50px; left: 50%;
-  transform: translateX(-50%);
-  width: 600px; height: 100px;
-  background: radial-gradient(ellipse, rgba(0, 180, 216, 0.15) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.footer__inner {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: var(--space-2xl);
-  margin-bottom: var(--space-2xl);
-}
-
-.footer__title {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: var(--space-md);
-  color: var(--accent-cyan);
-}
-
-.footer__links { list-style: none; }
-.footer__links li { margin-bottom: var(--space-sm); }
-.footer__links a {
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: all var(--transition-fast);
-}
-.footer__links a:hover {
-  color: var(--text-primary);
-  text-shadow: 0 0 10px var(--accent-cyan-glow);
-}
-
-.footer__social {
-  display: flex;
-  gap: var(--space-sm);
-  margin-top: var(--space-lg);
-}
-
-.social-btn {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  color: var(--text-muted);
-  transition: all var(--transition-base);
-}
-
-.social-btn:hover {
-  color: var(--accent-cyan);
-  border-color: var(--accent-cyan);
-  background: rgba(0, 180, 216, 0.1);
-  transform: translateY(-2px);
-  box-shadow: 0 0 15px var(--accent-cyan-glow);
-}
-
-.footer__bottom {
-  padding-top: var(--space-lg);
-  border-top: 1px solid var(--border-subtle);
-  display: flex;
-  justify-content: space-between;
-  color: var(--text-muted);
-  font-size: var(--text-sm);
-}
-
-.text-center { text-align: center; }
-.mt-5 { margin-top: var(--space-2xl); }
-
-/* RESPONSIVE */
-@media (max-width: 968px) {
-  .hero__inner { grid-template-columns: 1fr; text-align: center; }
-  .hero__cta { justify-content: center; }
-  .hero__title { font-size: var(--text-5xl); }
-  .hero__demo { order: -1; }
-  .hero__widget { max-width: 350px; margin: 0 auto; }
-  .hero__widget::after { display: none; }
-  .grid--2, .grid--3 { grid-template-columns: 1fr; }
-  .footer__inner { grid-template-columns: 1fr 1fr; }
-  .footer__brand { grid-column: span 2; }
-}
-
-/* Mobile Hamburger Menu */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 32px;
-  height: 32px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-  z-index: 1001;
-}
-
-.nav-toggle span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: var(--text-primary);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.nav-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.nav-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: flex;
-  }
-
-  .nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: var(--bg-secondary);
-    flex-direction: column;
-    padding: 100px var(--space-xl) var(--space-xl);
-    gap: var(--space-lg);
-    transition: right 0.3s ease;
-    border-left: 1px solid var(--border-subtle);
-  }
-
-  .nav--open {
-    right: 0;
-  }
-
-  .nav__link {
-    font-size: var(--text-lg);
-    padding: var(--space-sm) 0;
-  }
-
-  .nav .btn {
-    width: 100%;
-    margin-top: var(--space-md);
-  }
-}
-
-@media (max-width: 640px) {
-  .footer__inner { grid-template-columns: 1fr; }
-  .footer__brand { grid-column: span 1; }
-  .footer__bottom { flex-direction: column; gap: var(--space-md); text-align: center; }
-}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
 </head>
 <body>
   <!-- Header -->
@@ -1001,10 +34,7 @@ body::after {
               </radialGradient>
               <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
                 <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
-                <feMerge>
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
+                <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
             </defs>
             <circle cx="25" cy="25" r="23" fill="url(#bgGradient)"/>
@@ -1033,13 +63,13 @@ body::after {
         <span>mpowerio.ai</span>
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <nav class="nav">
         <a href="index.html" class="nav__link nav__link--active">Home</a>
         <a href="products.html" class="nav__link">Products</a>
+        <a href="how-it-works.html" class="nav__link">How It Works</a>
+        <a href="case-studies.html" class="nav__link">Case Studies</a>
         <a href="about.html" class="nav__link">About</a>
         <a href="contact.html" class="nav__link">Contact</a>
         <a href="contact.html" class="btn btn--primary">Book a Demo</a>
@@ -1051,20 +81,20 @@ body::after {
   <section class="hero">
     <div class="container hero__inner">
       <div class="hero__content">
-        <span class="hero__tagline">AI-Powered Products</span>
+        <span class="hero__tagline">AI-Powered Automation</span>
         <h1 class="hero__title">
           <span class="text-gradient">Quality Inputs</span><br>
           producing<br>
           <span class="text-spark">Quantum Outputs</span>
         </h1>
         <p class="hero__subtitle">
-          Transform your business with AI phone agents, custom voice clones,
-          interactive avatars, and stunning websites. Enterprise-grade technology
-          at accessible prices.
+          Transform your business with bilingual voice agents, automated CRM,
+          content engines, and stunning websites. Enterprise-grade AI
+          at small-business prices.
         </p>
         <div class="hero__cta">
-          <a href="#" class="btn btn--primary btn--large">Explore Products</a>
-          <a href="#" class="btn btn--spark btn--large">Book a Demo</a>
+          <a href="products.html" class="btn btn--primary btn--large">Explore Products</a>
+          <a href="contact.html" class="btn btn--spark btn--large">Book a Demo</a>
         </div>
       </div>
 
@@ -1072,11 +102,11 @@ body::after {
         <div class="hero__widget">
           <div class="hero__widget-header">
             <span class="hero__widget-badge">Live AI</span>
-            <p class="hero__widget-text">Talk to Our AI</p>
-            <p class="hero__widget-subtext">Experience mpowerio intelligence</p>
+            <p class="hero__widget-text">Talk to ParkerPro</p>
+            <p class="hero__widget-subtext">Experience mpowerio intelligence — 25+ languages</p>
           </div>
           <div class="hero__widget-embed">
-            <elevenlabs-convai agent-id="agent_9501kfkx12ywes2rzte8bngs4598"></elevenlabs-convai>
+            <elevenlabs-convai agent-id="agent_7001kf7e25dvf06vhhnmtp6d0xjx"></elevenlabs-convai>
           </div>
           <div class="widget-soundwave">
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -1086,76 +116,145 @@ body::after {
     </div>
   </section>
 
-  <!-- Products -->
+  <!-- Quick Stats Bar -->
+  <section class="section" style="padding: var(--space-3xl) 0;">
+    <div class="container">
+      <div class="stats-bar fade-in">
+        <div class="stats-bar__item">
+          <div class="stats-bar__number">13</div>
+          <div class="stats-bar__label">Lifecycle Hooks</div>
+        </div>
+        <div class="stats-bar__item">
+          <div class="stats-bar__number">24/7</div>
+          <div class="stats-bar__label">AI Agents</div>
+        </div>
+        <div class="stats-bar__item">
+          <div class="stats-bar__number">25+</div>
+          <div class="stats-bar__label">Languages</div>
+        </div>
+        <div class="stats-bar__item">
+          <div class="stats-bar__number">250+</div>
+          <div class="stats-bar__label">Client Reach</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
   <section class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-header__label">Our Products</span>
+      <div class="section-header fade-in">
+        <span class="section-header__label">What We Build</span>
         <h2 class="section-header__title">AI Solutions That <span class="text-gradient">Deliver</span></h2>
         <p class="section-header__text">
-          From intelligent phone agents to custom avatars, we build AI products
-          that transform how businesses connect with customers.
+          From intelligent voice agents to full content engines, we build AI systems
+          that transform how small businesses connect with customers.
         </p>
       </div>
 
-      <div class="grid grid--2">
-        <div class="product-card">
+      <div class="grid grid--3">
+        <div class="product-card fade-in">
           <div class="product-card__icon card__icon--cyan">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
-          <h3 class="product-card__title">AI Phone Agents</h3>
-          <p class="product-card__text">24/7 intelligent phone agents that handle calls in 25+ languages. Never miss a lead again.</p>
-          <p class="product-card__price">Starting at $299/mo</p>
-          <a href="#" class="btn btn--secondary" style="width: 100%;">Learn More</a>
+          <h3 class="product-card__title">Voice Agents</h3>
+          <p class="product-card__text">Bilingual AI phone agents that handle calls 24/7, book appointments, and never miss a lead. English + Spanish auto-detect.</p>
+          <a href="products.html" class="btn btn--secondary" style="width:100%;">View Plans</a>
         </div>
 
-        <div class="product-card">
+        <div class="product-card fade-in fade-in-delay-1">
           <div class="product-card__icon card__icon--mint">
-            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h3 class="product-card__title">Voice Clones</h3>
-          <p class="product-card__text">Create perfect digital replicas of any voice. Scale content and personalize at scale.</p>
-          <p class="product-card__price">Starting at $199</p>
-          <a href="#" class="btn btn--secondary" style="width: 100%;">Learn More</a>
+          <h3 class="product-card__title">CRM + Automation</h3>
+          <p class="product-card__text">Automated follow-ups, pipeline management, and lead nurturing. Every lead tracked, every callback automated.</p>
+          <a href="products.html" class="btn btn--secondary" style="width:100%;">View Plans</a>
         </div>
 
-        <div class="product-card">
-          <div class="product-card__icon card__icon--purple">
-            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-          </div>
-          <h3 class="product-card__title">VirtualU Avatars</h3>
-          <p class="product-card__text">AI-powered video avatars for training, marketing, and support without cameras or studios.</p>
-          <p class="product-card__price">Starting at $399/mo</p>
-          <a href="#" class="btn btn--secondary" style="width: 100%;">Learn More</a>
-        </div>
-
-        <div class="product-card">
+        <div class="product-card fade-in fade-in-delay-2">
           <div class="product-card__icon card__icon--spark">
-            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           </div>
-          <h3 class="product-card__title">Custom Websites</h3>
-          <p class="product-card__text">Stunning, conversion-focused websites. From landing pages to full e-commerce solutions.</p>
-          <p class="product-card__price">Starting at $1,500</p>
-          <a href="#" class="btn btn--secondary" style="width: 100%;">Learn More</a>
+          <h3 class="product-card__title">Content Engine</h3>
+          <p class="product-card__text">YouTube channels, social media management, and viral content strategies. Every business owner wants to go viral — we increase the odds.</p>
+          <a href="products.html" class="btn btn--secondary" style="width:100%;">View Plans</a>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="text-center mt-5">
-        <a href="#" class="btn btn--primary btn--large">View All Products & Pricing</a>
+  <!-- How It Works Teaser -->
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="arch-grid">
+        <div class="arch-visual fade-in">
+          <img src="images/SubAgentFlow.gif" alt="mpowerio.ai agent orchestration flow" loading="lazy">
+        </div>
+        <div class="arch-details fade-in">
+          <span class="section-header__label">Under the Hood</span>
+          <h2 style="margin-top: var(--space-md);">The mpowerio.ai Stack</h2>
+          <p style="color: var(--text-muted); margin: var(--space-lg) 0;">
+            13 lifecycle hooks. Autonomous agents. Local GPU inference.
+            No cloud rate limits. No per-API-call fees. Just results.
+          </p>
+          <ul class="arch-list">
+            <li>Lifecycle hooks fire on every action — guardrails built in</li>
+            <li>Sub-agents handle voice, CRM, content, and social autonomously</li>
+            <li>RTX 5090 local inference — your data stays on our hardware</li>
+            <li>Real-time observability dashboard for full transparency</li>
+          </ul>
+          <a href="how-it-works.html" class="btn btn--primary" style="margin-top: var(--space-xl);">See How It Works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FPC Case Study Teaser -->
+  <section class="section">
+    <div class="container">
+      <div class="arch-grid">
+        <div class="arch-details fade-in">
+          <span class="section-header__label">Case Study</span>
+          <h2 style="margin-top: var(--space-md);">FPC Construction</h2>
+          <p style="color: var(--text-muted); margin: var(--space-lg) 0;">
+            Filemon "Filly" Pineda runs a family construction company out of Edgefield, SC.
+            His son Jesus operates machinery. His daughter Danna is learning the books.
+            Before mpowerio.ai, Filly was missing calls, losing leads, and had zero online presence.
+          </p>
+          <div class="grid grid--2" style="gap: var(--space-md); margin-bottom: var(--space-xl);">
+            <div class="card">
+              <h4 class="card__title" style="color: var(--accent-orange);">Before</h4>
+              <p class="card__text">Missing calls, no website, no CRM, manual everything</p>
+            </div>
+            <div class="card">
+              <h4 class="card__title" style="color: var(--accent-mint);">After</h4>
+              <p class="card__text">Bilingual voice agent, automated CRM, live website, YouTube channel</p>
+            </div>
+          </div>
+          <a href="case-studies.html" class="btn btn--spark">Read Full Case Study</a>
+        </div>
+        <div class="fade-in" style="display: flex; align-items: center; justify-content: center;">
+          <div style="background: var(--gradient-card); border: 1px solid var(--border-accent); border-radius: var(--radius-2xl); padding: var(--space-2xl); text-align: center; width: 100%;">
+            <div class="stats-bar__number" style="font-size: var(--text-6xl); margin-bottom: var(--space-md);">$1,093</div>
+            <div style="color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; font-size: var(--text-sm);">Monthly Recurring Revenue</div>
+            <div style="color: var(--accent-mint); margin-top: var(--space-md); font-weight: 600;">First Client. Proven Stack.</div>
+            <a href="https://fpcconstructions.com" target="_blank" rel="noopener" class="btn btn--ghost" style="margin-top: var(--space-lg);">Visit fpcconstructions.com &rarr;</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="section">
+  <section class="section" style="background: var(--bg-secondary);">
     <div class="container text-center">
-      <div class="section-header">
-        <h2 class="section-header__title">Ready to <span class="text-spark">Transform</span> Your Business?</h2>
-        <p class="section-header__text">Book a free demo and see how our AI products can work for you.</p>
+      <div class="section-header fade-in">
+        <h2>Ready to <span class="text-spark">Transform</span> Your Business?</h2>
+        <p class="section-header__text">Book a free demo and see how our AI stack can work for you. Same system, any vertical.</p>
       </div>
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="#" class="btn btn--spark btn--large">Book Free Demo</a>
-        <a href="#" class="btn btn--secondary btn--large">View Pricing</a>
+      <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;" class="fade-in">
+        <a href="contact.html" class="btn btn--spark btn--large">Book Free Demo</a>
+        <a href="products.html" class="btn btn--secondary btn--large">View Pricing</a>
       </div>
     </div>
   </section>
@@ -1166,7 +265,7 @@ body::after {
       <div class="footer__inner">
         <div class="footer__brand">
           <a href="index.html" class="logo">
-            <div class="logo-animated" style="width: 40px; height: 40px;">
+            <div class="logo-animated" style="width:40px;height:40px;">
               <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="logoRingGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -1195,31 +294,7 @@ body::after {
             </div>
             <span>mpowerio.ai</span>
           </a>
-          <p style="color: var(--text-muted); margin-top: 1rem; max-width: 300px;">Quality Inputs producing Quantum Outputs. AI-powered products for modern businesses.</p>
-        </div>
-        <div>
-          <h4 class="footer__title">Products</h4>
-          <ul class="footer__links">
-            <li><a href="products.html#phone-agents">AI Phone Agents</a></li>
-            <li><a href="products.html#voice-clones">Voice Clones</a></li>
-            <li><a href="products.html#avatars">VirtualU Avatars</a></li>
-            <li><a href="products.html#websites">Custom Websites</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer__title">Company</h4>
-          <ul class="footer__links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="products.html">Pricing</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer__title">Connect</h4>
-          <ul class="footer__links">
-            <li><a href="/cdn-cgi/l/email-protection#8be3eee7fbcbe6fbe4fceef9e2e4a5eae2"><span class="__cf_email__" data-cfemail="afc7cac3dfefc2dfc0d8caddc6c081cec6">[email&#160;protected]</span></a></li>
-            <li><a href="contact.html">Book a Demo</a></li>
-          </ul>
+          <p style="color:var(--text-muted);margin-top:1rem;max-width:300px;">Quality Inputs producing Quantum Outputs. AI-powered automation for modern businesses.</p>
           <div class="footer__social">
             <a href="https://www.facebook.com/profile.php?id=61587036365320" target="_blank" rel="noopener" aria-label="Facebook" class="social-btn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -1235,282 +310,38 @@ body::after {
             </a>
           </div>
         </div>
+        <div>
+          <h4 class="footer__title">Products</h4>
+          <ul class="footer__links">
+            <li><a href="products.html">Pricing Plans</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__title">Company</h4>
+          <ul class="footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Book a Demo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__title">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="mailto:michael.parker@mpowerio.ai">michael.parker@mpowerio.ai</a></li>
+            <li><a href="tel:+18036402595">(803) 640-2595</a></li>
+          </ul>
+        </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2025 mpowerio.ai LLC. All rights reserved.</p>
+        <p>&copy; 2026 mpowerio.ai LLC. All rights reserved.</p>
         <p>Quality Inputs producing Quantum Outputs</p>
       </div>
     </div>
   </footer>
 
-  <!-- ElevenLabs Conversational Widget -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-
-  <!-- Vapor & Spark JavaScript -->
-  <script>
-(function() {
-  'use strict';
-
-  // VAPOR PARTICLE SYSTEM
-  class VaporSystem {
-    constructor() {
-      this.container = null;
-      this.particles = [];
-      this.maxParticles = 20;
-      this.isRunning = false;
-    }
-
-    init() {
-      this.container = document.createElement('div');
-      this.container.className = 'vapor-container';
-      document.body.appendChild(this.container);
-      this.isRunning = true;
-      this.spawnLoop();
-    }
-
-    createParticle() {
-      if (this.particles.length >= this.maxParticles) return;
-      const particle = document.createElement('div');
-      particle.className = 'vapor-particle';
-      particle.style.left = `${Math.random() * 100}%`;
-      const duration = 8 + Math.random() * 7;
-      particle.style.animationDuration = `${duration}s`;
-      particle.style.animationDelay = `${Math.random() * 2}s`;
-      particle.style.transform = `scale(${0.5 + Math.random() * 1})`;
-      this.container.appendChild(particle);
-      this.particles.push(particle);
-      setTimeout(() => {
-        if (particle.parentNode) particle.parentNode.removeChild(particle);
-        const index = this.particles.indexOf(particle);
-        if (index > -1) this.particles.splice(index, 1);
-      }, (duration + 2) * 1000);
-    }
-
-    spawnLoop() {
-      if (!this.isRunning) return;
-      this.createParticle();
-      setTimeout(() => this.spawnLoop(), 500 + Math.random() * 1000);
-    }
-  }
-
-  // SPARK SYSTEM - v2.8 Enhanced Synapse Spark
-  class SparkSystem {
-    constructor() {
-      this.sparks = [];
-      this.maxSparks = 10;
-      this.isRunning = false;
-      this.widget = null;
-    }
-
-    init() {
-      this.widget = document.querySelector('.hero__widget');
-      this.isRunning = true;
-      // Create initial sparks immediately so user sees them
-      setTimeout(() => this.createSpark(window.innerWidth * 0.7, window.innerHeight * 0.3, true), 500);
-      setTimeout(() => this.createSpark(window.innerWidth * 0.3, window.innerHeight * 0.2, false), 1000);
-      setTimeout(() => this.createSpark(window.innerWidth * 0.5, window.innerHeight * 0.15, false), 1500);
-      this.sparkLoop();
-    }
-
-    createSpark(x, y, isWidgetZone) {
-      if (this.sparks.length >= this.maxSparks) return;
-      const spark = document.createElement('div');
-      spark.className = 'spark';
-      spark.style.left = `${x}px`;
-      spark.style.top = `${y}px`;
-      if (isWidgetZone) spark.style.transform = 'scale(1.8)';
-      document.body.appendChild(spark);
-      this.sparks.push(spark);
-      this.createTrail(x, y);
-      setTimeout(() => {
-        if (spark.parentNode) spark.parentNode.removeChild(spark);
-        const index = this.sparks.indexOf(spark);
-        if (index > -1) this.sparks.splice(index, 1);
-      }, 1000);
-    }
-
-    createTrail(x, y) {
-      const trail = document.createElement('div');
-      trail.className = 'spark-trail';
-      trail.style.left = `${x}px`;
-      trail.style.top = `${y}px`;
-      trail.style.width = `${60 + Math.random() * 80}px`;
-      document.body.appendChild(trail);
-      setTimeout(() => {
-        if (trail.parentNode) trail.parentNode.removeChild(trail);
-      }, 600);
-    }
-
-    getWidgetZone() {
-      if (!this.widget) return null;
-      const rect = this.widget.getBoundingClientRect();
-      return { left: rect.left - 150, right: rect.right + 150, top: rect.top - 150, bottom: rect.bottom + 150 };
-    }
-
-    sparkLoop() {
-      if (!this.isRunning) return;
-      const x = Math.random() * window.innerWidth;
-      const y = Math.random() * window.innerHeight * 0.7;
-      const zone = this.getWidgetZone();
-      let isWidgetZone = zone && x >= zone.left && x <= zone.right && y >= zone.top && y <= zone.bottom;
-      // Much higher probability: 85% in widget zone, 40% elsewhere
-      if ((isWidgetZone && Math.random() > 0.15) || (!isWidgetZone && Math.random() > 0.60)) {
-        this.createSpark(x, y, isWidgetZone);
-      }
-      // Faster loop: 600-1800ms instead of 1500-4000ms
-      setTimeout(() => this.sparkLoop(), 600 + Math.random() * 1200);
-    }
-  }
-
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (!prefersReducedMotion) {
-    const vaporSystem = new VaporSystem();
-    vaporSystem.init();
-    
-    const sparkSystem = new SparkSystem();
-    sparkSystem.init();
-  }
-
-  // Mobile nav toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.nav');
-  if (navToggle && nav) {
-    navToggle.addEventListener('click', () => {
-      nav.classList.toggle('nav--open');
-      navToggle.classList.toggle('active');
-      navToggle.setAttribute('aria-expanded', nav.classList.contains('nav--open'));
-    });
-
-    // Close nav when clicking a link
-    nav.querySelectorAll('.nav__link').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('nav--open');
-        navToggle.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-
-  // Scroll reveal
-  const revealElements = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  revealElements.forEach(el => observer.observe(el));
-
-  // Grid Intersection Spark Pops
-  class GridSparkSystem {
-    constructor() {
-      this.gridSize = 40;
-      this.lastSparkTime = 0;
-      this.sparkCooldown = 800;
-    }
-
-    init() {
-      document.addEventListener('mousemove', (e) => this.checkGridIntersection(e));
-    }
-
-    checkGridIntersection(e) {
-      const now = Date.now();
-      if (now - this.lastSparkTime < this.sparkCooldown) return;
-
-      const x = e.clientX;
-      const y = e.clientY;
-      const nearGridX = x % this.gridSize < 8 || x % this.gridSize > this.gridSize - 8;
-      const nearGridY = y % this.gridSize < 8 || y % this.gridSize > this.gridSize - 8;
-
-      if (nearGridX && nearGridY && Math.random() > 0.7) {
-        this.createGridPop(x, y);
-        this.lastSparkTime = now;
-      }
-    }
-
-    createGridPop(x, y) {
-      const pop = document.createElement('div');
-      pop.style.cssText = `
-        position: fixed;
-        left: ${x}px;
-        top: ${y}px;
-        width: 6px;
-        height: 6px;
-        background: var(--accent-gold);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 5;
-        box-shadow: 0 0 10px var(--accent-gold), 0 0 20px var(--accent-orange-glow);
-        animation: gridPop 0.5s ease-out forwards;
-      `;
-      document.body.appendChild(pop);
-      setTimeout(() => pop.remove(), 500);
-    }
-  }
-
-  // Ambient Spark Drips
-  class AmbientDripSystem {
-    constructor() {
-      this.isRunning = false;
-    }
-
-    init() {
-      this.isRunning = true;
-      this.dripLoop();
-    }
-
-    createDrip() {
-      const drip = document.createElement('div');
-      const startX = Math.random() * window.innerWidth;
-      drip.style.cssText = `
-        position: fixed;
-        left: ${startX}px;
-        top: -10px;
-        width: 2px;
-        height: 20px;
-        background: linear-gradient(to bottom, var(--accent-cyan), transparent);
-        pointer-events: none;
-        z-index: 1;
-        opacity: 0.4;
-        animation: dripFall 3s linear forwards;
-      `;
-      document.body.appendChild(drip);
-      setTimeout(() => drip.remove(), 3000);
-    }
-
-    dripLoop() {
-      if (!this.isRunning) return;
-      if (Math.random() > 0.6) this.createDrip();
-      setTimeout(() => this.dripLoop(), 2000 + Math.random() * 3000);
-    }
-  }
-
-  // Add keyframes for grid pop and drip
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes gridPop {
-      0% { transform: scale(0); opacity: 1; }
-      50% { transform: scale(2); opacity: 0.8; }
-      100% { transform: scale(0); opacity: 0; }
-    }
-    @keyframes dripFall {
-      0% { transform: translateY(0); opacity: 0.4; }
-      100% { transform: translateY(100vh); opacity: 0; }
-    }
-  `;
-  document.head.appendChild(style);
-
-  if (!prefersReducedMotion) {
-    const gridSparkSystem = new GridSparkSystem();
-    gridSparkSystem.init();
-
-    const ambientDripSystem = new AmbientDripSystem();
-    ambientDripSystem.init();
-  }
-})();
-  </script>
+  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>

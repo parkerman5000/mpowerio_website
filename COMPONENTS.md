@@ -1,0 +1,174 @@
+# mpowerio.ai v3.0 — Shared Components
+
+Copy-paste these into each page. All pages link `css/design-system.css` and `js/site.js`.
+
+## Head Block
+
+```html
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/design-system.css">
+```
+
+## Navigation (6 pages + CTA)
+
+```html
+<header class="header">
+  <div class="container header__inner">
+    <a href="index.html" class="logo">
+      <div class="logo-animated">
+        <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logoRingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00f5a0"/>
+              <stop offset="50%" stop-color="#00b4d8"/>
+              <stop offset="100%" stop-color="#7b2cbf"/>
+            </linearGradient>
+            <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#1a1a2e"/>
+              <stop offset="100%" stop-color="#0a0a0f"/>
+            </radialGradient>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <circle cx="25" cy="25" r="23" fill="url(#bgGradient)"/>
+          <circle class="glow-ring" cx="25" cy="25" r="21" fill="none" stroke="url(#logoRingGradient)" stroke-width="2.5" opacity="0.8"/>
+          <circle cx="25" cy="25" r="18" fill="none" stroke="#00b4d8" stroke-width="0.5" opacity="0.3"/>
+          <g class="network-lines" stroke="#00b4d8" stroke-width="0.8" opacity="0.6" filter="url(#glow)">
+            <line x1="25" y1="14" x2="17" y2="20"/><line x1="25" y1="14" x2="33" y2="18"/>
+            <line x1="17" y1="20" x2="14" y2="28"/><line x1="17" y1="20" x2="25" y2="25"/>
+            <line x1="33" y1="18" x2="25" y2="25"/><line x1="33" y1="18" x2="35" y2="27"/>
+            <line x1="25" y1="25" x2="18" y2="33"/><line x1="25" y1="25" x2="32" y2="34"/>
+            <line x1="14" y1="28" x2="18" y2="33"/><line x1="35" y1="27" x2="32" y2="34"/>
+            <line x1="18" y1="33" x2="32" y2="34"/>
+          </g>
+          <g filter="url(#glow)">
+            <circle class="node node-1" cx="25" cy="14" r="3" fill="#00f5a0"/>
+            <circle class="node node-2" cx="17" cy="20" r="2.5" fill="#00b4d8"/>
+            <circle class="node node-3" cx="33" cy="18" r="2.5" fill="#00f5a0"/>
+            <circle class="node node-4" cx="25" cy="25" r="3.5" fill="#00f5a0"/>
+            <circle class="node node-5" cx="14" cy="28" r="2" fill="#00b4d8"/>
+            <circle class="node node-6" cx="35" cy="27" r="2" fill="#00b4d8"/>
+            <circle class="node node-7" cx="18" cy="33" r="2.5" fill="#00f5a0"/>
+            <circle class="node node-8" cx="32" cy="34" r="2" fill="#00b4d8"/>
+          </g>
+        </svg>
+      </div>
+      <span>mpowerio.ai</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="products.html" class="nav__link">Products</a>
+      <a href="how-it-works.html" class="nav__link">How It Works</a>
+      <a href="case-studies.html" class="nav__link">Case Studies</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+      <a href="contact.html" class="btn btn--primary">Book a Demo</a>
+    </nav>
+  </div>
+</header>
+```
+
+Set `nav__link--active` on the current page's link.
+
+## Footer (4-column)
+
+```html
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="logo">
+          <div class="logo-animated" style="width:40px;height:40px;">
+            <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="logoRingGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00f5a0"/><stop offset="50%" stop-color="#00b4d8"/><stop offset="100%" stop-color="#7b2cbf"/>
+                </linearGradient>
+                <radialGradient id="bgGradient2" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#0a0a0f"/>
+                </radialGradient>
+              </defs>
+              <circle cx="25" cy="25" r="23" fill="url(#bgGradient2)"/>
+              <circle class="glow-ring" cx="25" cy="25" r="21" fill="none" stroke="url(#logoRingGradient2)" stroke-width="2.5" opacity="0.8"/>
+              <g stroke="#00b4d8" stroke-width="0.8" opacity="0.6">
+                <line x1="25" y1="14" x2="17" y2="20"/><line x1="25" y1="14" x2="33" y2="18"/>
+                <line x1="17" y1="20" x2="25" y2="25"/><line x1="33" y1="18" x2="25" y2="25"/>
+                <line x1="25" y1="25" x2="18" y2="33"/><line x1="25" y1="25" x2="32" y2="34"/>
+              </g>
+              <g>
+                <circle cx="25" cy="14" r="2.5" fill="#00f5a0"/>
+                <circle cx="17" cy="20" r="2" fill="#00b4d8"/>
+                <circle cx="33" cy="18" r="2" fill="#00f5a0"/>
+                <circle cx="25" cy="25" r="3" fill="#00f5a0"/>
+                <circle cx="18" cy="33" r="2" fill="#00f5a0"/>
+                <circle cx="32" cy="34" r="2" fill="#00b4d8"/>
+              </g>
+            </svg>
+          </div>
+          <span>mpowerio.ai</span>
+        </a>
+        <p style="color:var(--text-muted);margin-top:1rem;max-width:300px;">Quality Inputs producing Quantum Outputs. AI-powered automation for modern businesses.</p>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/profile.php?id=61587036365320" target="_blank" rel="noopener" aria-label="Facebook" class="social-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://instagram.com/mpowerio.ai" target="_blank" rel="noopener" aria-label="Instagram" class="social-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://youtube.com/@mpowerio" target="_blank" rel="noopener" aria-label="YouTube" class="social-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://x.com/mpowerioAI" target="_blank" rel="noopener" aria-label="X" class="social-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__title">Products</h4>
+        <ul class="footer__links">
+          <li><a href="products.html">Pricing Plans</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__title">Company</h4>
+        <ul class="footer__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Book a Demo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__title">Connect</h4>
+        <ul class="footer__links">
+          <li><a href="mailto:michael.parker@mpowerio.ai">michael.parker@mpowerio.ai</a></li>
+          <li><a href="tel:+18036402595">(803) 640-2595</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 mpowerio.ai LLC. All rights reserved.</p>
+      <p>Quality Inputs producing Quantum Outputs</p>
+    </div>
+  </div>
+</footer>
+```
+
+## Scripts (bottom of body)
+
+```html
+<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+<script src="js/site.js"></script>
+```
+
+Only include ElevenLabs script on pages with the widget (homepage).
